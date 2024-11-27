@@ -14,7 +14,7 @@ const Welcome_navigation = () => {
             {!close_welcome_nav && <div className="w-full h-[50px] px-[75px] flex items-center justify-between bg-blue-600">
                 <p className="text-md text-white font-semibold">Welcome to your FintazaPdl {user_role == 'admin' && 'Admin'} Porter</p>
 
-                <p className="text-md text-white font-[500]"> <Show_current_date_time /> </p>
+                <span className="text-md text-white font-[500]"> <Show_current_date_time /> </span>
 
                 {/* <span className="w-[20px] h-[20px] cursor-pointer " onClick={()=> setClose_welcome_nav(!close_welcome_nav)} >
                     <FaRegCircleXmark size={'100%'} className='text-white hover:text-red-500' />

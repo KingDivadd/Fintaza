@@ -9,6 +9,8 @@ const User_profile_page = () => {
         const item = localStorage.getItem('profile_toggle')
         if (item) {
             const toggles = JSON.parse(item)
+            setProfileToggle(toggles)
+            
         }
     }, [])
 
@@ -77,37 +79,38 @@ const User_profile_page = () => {
                 </div>
 
                 {/* Account information */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-5 h-[70px] rounded-[3px] shadow-md border border-slate-200 px-[15px] ">
-                    <span className="flex items-center justify-start gap-5">
-                        <p className="text-md font-[500] w-[150px]  text-slate-700">Account Number</p>
-                        <p className="text-lg font-[600] text-slate-700 ">1234567890</p>
-                    </span>
-                    <span className="flex items-center justify-start gap-5">
-                        <p className="text-md font-[500] w-[150px]  text-slate-700">Registration Date</p>
-                        <p className="text-lg font-[600] text-slate-700 ">20 August, 2005</p>
-                    </span>
-                    <span className="flex items-center justify-start gap-5">
-                        <p className="text-md font-[500] w-[150px]  text-slate-700">Account Status</p>
-                        <p className="text-lg font-[600] text-teal-700 ">Active</p>
-                    </span>
-                </div>
+                <div className="w-full flex flex-col items-start justify-start gap-10 shadow-md border border-slate-200 p-[15px] rounded-[3px]">
 
-                {/* changee  password */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-10">
-                    <div className="w-auto flex items-center justify-start gap-10">
-                        <span className="w-[200px] "> <input type="text" placeholder='Old Password' className='input-type-1' /> </span>
-                        <span className="w-[200px] "> <input type="text" placeholder='New Password' className='input-type-1' /> </span>
+                    <div className="w-full flex flex-wrap items-center justify-between gap-5 min-h-[70px]  ">
+                        <span className="flex items-center justify-start gap-5">
+                            <p className="text-md font-[500] w-[150px]  text-slate-700">Account Number</p>
+                            <p className="text-lg font-[600] text-slate-700 ">1234567890</p>
+                        </span>
+                        <span className="flex items-center justify-start gap-5">
+                            <p className="text-md font-[500] w-[150px]  text-slate-700">Registration Date</p>
+                            <p className="text-lg font-[600] text-slate-700 ">20 August, 2005</p>
+                        </span>
+                        <span className="flex items-center justify-start gap-5">
+                            <p className="text-md font-[500] w-[150px]  text-slate-700">Account Status</p>
+                            <p className="text-lg font-[600] text-lime-600 ">Active</p>
+                        </span>
                     </div>
 
-                    <button className="px-5 h-[45px] rounded-[3px] bg-blue-600 hover:bg-blue-700 text-white ">
-                        reset password
-                    </button>
-                </div>
+                    {/* changee  password */}
+                    <div className="w-full flex flex-wrap items-center justify-between gap-10">
+                        <div className="w-auto flex items-center justify-start gap-10">
+                            <span className="w-[200px] "> <input type="text" placeholder='Old Password' className='input-type-1' /> </span>
+                            <span className="w-[200px] "> <input type="text" placeholder='New Password' className='input-type-1' /> </span>
+                        </div>
 
-                {/* toggle sections */}
-                <div className="w-full flex justify-start">
+                        <button className="px-5 h-[45px] rounded-[3px] bg-blue-600 hover:bg-blue-700 text-white ">
+                            reset password
+                        </button>
+                    </div>
 
-                    <div className="w-auto flex flex-col items-start justify-start gap-5 p-[15px] rounded-[5px] shadow-md border border-slate-200 ">
+                    {/* toggle sections */}
+
+                    <div className="w-auto flex flex-col items-start justify-start gap-5 p-[15px] rounded-[5px] ">
                         <span className="w-full flex items-center justify-start gap-5" onClick={()=> handle_toggle('two_fa')} >
                             <p className="text-md  w-[250px] cursor-pointer ">Two-Factor Authentication</p>
                             <span className={profileToggle.two_fa ? "active-toggle": "toggle"}> </span>
@@ -129,6 +132,9 @@ const User_profile_page = () => {
                         </span>
                     </div>
                 </div>
+
+
+
 
             </div>
         </div>

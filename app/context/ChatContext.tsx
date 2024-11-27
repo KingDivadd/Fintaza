@@ -1,6 +1,12 @@
 'use client'
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
+interface UserProps {
+    first_name: string;
+    last_name: string;
+    email: string, avatar: string, business_name: string, address: string, is_active: boolean; user_role: string
+
+}
 interface ProfileToggle {
     two_fa: boolean,
     email_auth: boolean,
@@ -29,7 +35,9 @@ interface ChatContextType {
     modalSource: string;
     setModalSource: (modalSource: string) => void;
     profileToggle: ProfileToggle;
-    setProfileToggle: (profileToggle: ProfileToggle) => void
+    setProfileToggle: (profileToggle: ProfileToggle) => void;
+    loggedInUser: UserProps;
+    setLoggedInUser: (loggedInUser: UserProps) => void;
 }
 
 
@@ -48,6 +56,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [modalFor, setModalFor] = useState('')
     const [modalSource, setModalSource] = useState('')
     const [profileToggle, setProfileToggle] = useState({two_fa: false, email_auth: true, sms_auth: true, web_push: false })
+    const [loggedInUser, setLoggedInUser] = useState({first_name: '', last_name: '', email: '', avatar: '', business_name: '', address: '', user_role: '', is_active: true})
     
 
     return (
@@ -59,7 +68,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             user_role, setUser_role,
             trigger_notification, setTrigger_notification,
             showModal, setShowModal, selectedItem, setSelectedItem, modalFor, setModalFor, modalSource, setModalSource,
-            profileToggle, setProfileToggle
+            profileToggle, setProfileToggle, loggedInUser, setLoggedInUser
             }}>
             {children}
         </ChatContext.Provider>

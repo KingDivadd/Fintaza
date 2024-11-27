@@ -1,6 +1,6 @@
 'use client'
 import React, {useState, useEffect} from 'react'
-import Modal from '../component/modal'
+import Modal_cont from '../component/modal/modal_cont'
 import { useChat } from '../context/ChatContext'
 
 const User_payment_page = () => {
@@ -274,7 +274,7 @@ const User_payment_page = () => {
 
             </div>
 
-            {showModal && <Modal showModal={showModal} setShowModal={setShowModal} modalFor={modalFor} setModalFor={setModalFor} selectedItem={selectedItem} setSelectedItem={setSelectedItem} modalSource={modalSource} setModalSource={setModalSource} />}
+            {showModal && <Modal_cont showModal={showModal} setShowModal={setShowModal} modalFor={modalFor} setModalFor={setModalFor} selectedItem={selectedItem} setSelectedItem={setSelectedItem} modalSource={modalSource} setModalSource={setModalSource} />}
         </div>
     )
 }

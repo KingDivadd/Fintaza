@@ -191,7 +191,7 @@ const User_Dashboard = () => {
                             <p className="text-sm font-[600] w-[20%] px-[15px] ">Loan Id</p>
                             <p className="text-sm font-[600] w-[20%] px-[15px] ">Next Payment Date</p>
                             <p className="text-sm font-[600] w-[20%] px-[15px] text-center ">Status</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px] text-end">Amount to Pay</p>
+                            <p className="text-sm font-[600] w-[20%] px-[15px]">Amount to Pay</p>
                             <p className="text-sm font-[600] w-[20%] px-[15px] text-end ">Action</p>
                         </span>
 
@@ -203,10 +203,10 @@ const User_Dashboard = () => {
                                             <p className="text-sm font-[500] w-[20%] px-[15px] ">BL1000200{ind + 1}</p>
                                             <p className="text-sm font-[500] w-[20%] px-[15px] ">{7 + ind} November, 2024</p>
                                             <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-center items-center ">
-                                                { ind % 2 == 1 ? <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-amber-600 ">Upcoming</button> :
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-red-600 ">Due</button>}
+                                                { ind % 2 == 1 ? <button className="h-[32.5px] w-[100px] rounded-[3px] font-[500] text-amber-600 ">Upcoming</button> :
+                                                <button className="h-[32.5px] w-[100px] rounded-[3px] font-[500] text-red-600 ">Due</button>}
                                             </span>
-                                            <p className="text-sm font-[500] w-[20%] px-[15px] text-end ">$7,500</p>
+                                            <p className="text-sm font-[500] w-[20%] px-[15px] ">$7,500</p>
                                             <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-end">
                                                 <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-teal-700 hover:bg-teal-800">Pay Now</button>
                                             </span>

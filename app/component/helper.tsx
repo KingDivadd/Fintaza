@@ -153,3 +153,77 @@ export const Show_current_date_time: React.FC = () => {
 
     return <div>{currentDateTime}</div>;
 };
+
+
+interface AvatarProp {
+    user: any;
+    isActive: boolean;
+    toggleActive: any;
+
+}
+
+export const Avatar = ({ user, isActive, toggleActive }: AvatarProp) => {
+    const { first_name = '', last_name = '', avatar } = user;
+
+    // Generate initials
+    const initials = `${first_name.charAt(0)}${last_name.charAt(0)}`.toUpperCase();
+
+    return (
+        <div className="relative inline-block">
+            {/* Avatar Circle */}
+            <div
+                className={`w-[45px] h-[45px] flex items-center justify-center rounded-full ${
+                    avatar ? '' : 'bg-blue-600 text-white font-[400]'
+                }`}
+                style={{
+                    backgroundImage: avatar ? `url(${avatar})` : undefined,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
+                {!avatar && <span className="text-md font-semibold">{initials}</span>}
+            </div>
+
+            {/* Green Dot */}
+            <span
+                className={`absolute top-0 right-0 w-[13.5px] h-[13.5px] rounded-full border-2 border-white ${
+                    isActive ? 'bg-green-500' : 'bg-gray-300'
+                } cursor-pointer`}
+                title={isActive ? 'Active' : 'Inactive'}
+            ></span>
+        </div>
+    );
+};
+
+export const SmallAvatar = ({ user, isActive, toggleActive }: AvatarProp) => {
+    const { first_name = '', last_name = '', avatar } = user;
+
+    // Generate initials
+    const initials = `${first_name.charAt(0)}${last_name.charAt(0)}`.toUpperCase();
+
+    return (
+        <div className="relative inline-block">
+            {/* Avatar Circle */}
+            <div
+                className={`w-[37.5px] h-[37.5px] flex items-center justify-center rounded-full ${
+                    avatar ? '' : 'bg-blue-600 text-white  font-[400]'
+                }`}
+                style={{
+                    backgroundImage: avatar ? `url(${avatar})` : undefined,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
+                {!avatar && <span className="text-sm font-semibold">{initials}</span>}
+            </div>
+
+            {/* Green Dot */}
+            <span
+                className={`absolute top-0 right-0 w-[10.5px] h-[10.5px] rounded-full border-2 border-white ${
+                    isActive ? 'bg-green-500' : 'bg-gray-300'
+                } cursor-pointer`}
+                title={isActive ? 'Active' : 'Inactive'}
+            ></span>
+        </div>
+    );
+};

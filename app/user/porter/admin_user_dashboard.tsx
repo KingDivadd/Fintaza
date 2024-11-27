@@ -5,6 +5,7 @@ import Welcome_navigation from "../../component/welcome_navigation"
 import Route_navigation from "../../component/route_navigation"
 import { useChat } from '../../context/ChatContext'
 import Admin_dashboard from '../../component/admin_dashboard'
+import User_management_page  from '../../pages/admin_user_manag_page'
 
 
 
@@ -20,6 +21,8 @@ const Admin_User_dashboard = () => {
                     <Route_navigation />
 
                     { route_nav == 'dashboard' && <Admin_dashboard /> }
+                    { route_nav == 'user-management' && <User_management_page /> }
+
 
                     {/* {nav === "dashboard" && <Dashboard />}
                     {nav === "profile-management" && <Profile_management />}
