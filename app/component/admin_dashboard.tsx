@@ -87,6 +87,8 @@ const Admin_dashboard = () => {
     }
 
 
+
+
     return (
         <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
             <div className="w-full flex flex-col justify-start items-center ">
@@ -158,11 +160,11 @@ const Admin_dashboard = () => {
                                             :<p className="text-sm font-[500] w-[15%] px-[15px] text-teal-700">Approved</p>}
 
                                             {ind == 1 ? <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-start gap-5 items-center ">
-                                                <button className="h-[27.5px] px-5 rounded-[3px]  text-white bg-teal-700 hover:bg-teal-800">accept</button> 
-                                                <button className="h-[27.5px] px-5 rounded-[3px]  text-white bg-red-600 hover:bg-red-700">reject</button>
+                                                <button className="h-[27.5px] text-sm px-5 rounded-[2px]  text-white bg-teal-700 hover:bg-teal-800">accept</button> 
+                                                <button className="h-[27.5px] text-sm px-5 rounded-[2px]  text-white bg-red-600 hover:bg-red-700">reject</button>
                                             </span>:
                                             <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-start">
-                                                <button className="h-[27.5px] px-5 rounded-[3px] bg-blue-600 hover:bg-blue-700 text-white hover">view</button>
+                                                <button className="h-[27.5px] text-sm px-5 rounded-[2px] bg-blue-600 hover:bg-blue-700 text-white hover">view</button>
                                             </span>}
                                         </span>
                                     )

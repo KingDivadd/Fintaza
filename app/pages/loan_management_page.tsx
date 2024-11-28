@@ -87,13 +87,27 @@ const LoanManagement = () => {
         return pages;
     };  
 
-
-    function handle_new_loan() {
+    function handle_edit(data:any) {
         setShowModal(!showModal)
-        setModalFor('create')
-        setModalSource('new-loan')
-        
+        setModalFor('edit')
+        setModalSource('admin-loan')
+        setSelectedItem(data)
     }
+
+    function handle_view(data:any) {
+        setShowModal(!showModal)
+        setModalFor('view')
+        setModalSource('admin-loan')
+        setSelectedItem(data)
+    }
+
+    function handle_approve(data:any) {
+        setShowModal(!showModal)
+        setModalFor('approve')
+        setModalSource('admin-loan')
+        setSelectedItem(data)
+    }
+
 
     return (
         <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
@@ -167,7 +181,9 @@ const LoanManagement = () => {
                                 {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
                                     return(
                                         <span key={ind} className="table-body-row-1  ">
-                                            <p className="text-sm font-[500] w-[12.5%] px-[15px] text-blue-600 hover:cursor-pointer ">BL1000206{ind}</p>
+                                            <span className="w-[12.5%] px-[15px] ">
+                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >BL1000207{ind}</p>
+                                            </span>
                                             <p className="text-sm font-[500] w-[15%] px-[15px] ">Ibrahim Babangida</p>
                                             <p className="text-sm font-[500] w-[10%] px-[15px] ">$10,000</p>
                                             <p className="text-sm font-[500] w-[10%] px-[15px] ">24 Months</p>
@@ -175,9 +191,9 @@ const LoanManagement = () => {
                                             <p className="text-sm font-[500] w-[15%] px-[15px] ">20 November, 2024</p>
 
                                             <span className="w-[22.5%] flex items-center justify-start gap-[15px] ">
-                                                <button className="h-[27.5px] rounded-[2px] px-5 bg-teal-700 hover:bg-teal-800 text-white ">view</button>
-                                                <button className="h-[27.5px] rounded-[2px] px-5 bg-amber-600 hover:bg-amber-700 text-white ">edit</button>
-                                                <button className="h-[27.5px] rounded-[2px] px-5 bg-blue-600 hover:bg-blue-700 text-white ">approve</button>
+                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-teal-700 hover:bg-teal-800 text-white " onClick={()=> handle_view(data)}>view</button>
+                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-amber-600 hover:bg-amber-700 text-white " onClick={()=> handle_edit(data)}>edit</button>
+                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-blue-600 hover:bg-blue-700 text-white " onClick={()=> handle_approve(data)}>approve</button>
                                             </span>
                                             
                                         </span>

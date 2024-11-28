@@ -2,17 +2,19 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface UserProps {
-    first_name: string;
-    last_name: string;
-    email: string, avatar: string, business_name: string, address: string, is_active: boolean; user_role: string
+    first_name: string; last_name: string; email: string; avatar: string; business_name: string; 
+    phone: string; code: string; zip: string; state: string; city: string; address: string; user_role: string; 
+    is_active: boolean, date_of_birth: number;  ssn: string; marital_status: string; number_of_dependents: number;
 
 }
+
 interface ProfileToggle {
     two_fa: boolean,
     email_auth: boolean,
     sms_auth: boolean,
     web_push: boolean
 }
+
 interface ChatContextType {
     header_nav: string; 
     setHeader_nav: (header_nav: string) => void; 
@@ -56,7 +58,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [modalFor, setModalFor] = useState('')
     const [modalSource, setModalSource] = useState('')
     const [profileToggle, setProfileToggle] = useState({two_fa: false, email_auth: true, sms_auth: true, web_push: false })
-    const [loggedInUser, setLoggedInUser] = useState({first_name: '', last_name: '', email: '', avatar: '', business_name: '', address: '', user_role: '', is_active: true})
+    const [loggedInUser, setLoggedInUser] = useState({first_name: '', last_name: '', email: '', avatar: '', business_name: '', phone: '', code: '', zip: '', state: '', city: '', address: '', user_role: '', is_active: true, date_of_birth: 0,  ssn: '', marital_status: '', number_of_dependents: 0})
     
 
     return (

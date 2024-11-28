@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Alert from "../helper"
 
 import User_modal from "./user_modal"
+import Admin_loan from "./admin_loan"
 
 
 interface Modal_props {
@@ -59,7 +60,7 @@ const Modal_cont = ({ showModal, setShowModal, selectedItem, setSelectedItem, mo
                 <div className="fixed inset-0 transition-opacity" aria-hidden="true">
                     <div className="absolute inset-0 bg-gray-500 opacity-35"></div>
                 </div>
-                <div className="w-full h-screen flex items-center justify-center overflow-hidden shadow-xl transform transition-all" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description" onClick={handleCloseModal}>
+                <div className="w-full h-screen flex items-start max-sm:pt-[30px] sm:items-center justify-center overflow-hidden shadow-xl transform transition-all" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description" onClick={handleCloseModal}>
 
                     <div className={"h-auto w-auto mx-auto shadow-xl flex items-start "}>
                         {/* the container for the input fields */}
@@ -67,6 +68,7 @@ const Modal_cont = ({ showModal, setShowModal, selectedItem, setSelectedItem, mo
                             <div className="w-full flex flex-col items-start justify-start   ">
 
                             {modalSource  == 'user-modal' && <User_modal />}
+                            {modalSource  == 'admin-loan' && <Admin_loan />}
 
                             </div>
                         </div>
