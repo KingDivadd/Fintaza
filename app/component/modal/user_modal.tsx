@@ -3,8 +3,11 @@ import React, {useState, useEffect} from 'react'
 import { useChat } from '../../context/ChatContext'
 import { FaRegCircleXmark } from "react-icons/fa6"
 import Drop_down_1 from '../drop_down'
-import Alert, {Avatar} from '../../component/helper'
+import Alert, {Avatar, readable_date_time} from '../../component/helper'
 import { patch_auth_request, post_auth_request } from '../../api'
+import moment from 'moment'
+import { IoIosFlag } from "react-icons/io";
+
 
 
 const User_modal = () => {
@@ -22,7 +25,7 @@ const User_modal = () => {
 
     useEffect(() => {
         if (modalFor == 'edit') {   
-            const {last_name, first_name, email, title, is_admin, is_active, business_name, code, phone, city, state, zip, address } = selectedItem
+            const {last_name, first_name, email, title, is_admin, is_active, business_name, code, phone, city, state, zip, address, created_at, updated_at } = selectedItem
             setAuth({...auth, last_name, first_name, email,is_active, business_name, code, phone, city, state, zip, address })
             setIsActive(is_active)
             setSelected_item(title)
@@ -143,15 +146,15 @@ const User_modal = () => {
 
     return (
         <div className="w-full">
-            <div className=" bg-white max-h-[90vh] w-[900px] rounded-[5px] shadow-md border border-slate-200  overflow-y-auto relative " >
+            <div className=" bg-white max-h-[90vh]  rounded-[5px] shadow-md border border-slate-200  overflow-y-auto relative " >
                 <span className="px-[20px] flex items-center justify-end absolute top-[15px] right-[50px] z-20 h-[50px]  ">
 
                     {alert.message && <Alert message={alert.message} type={alert.type} />} 
                 </span>
 
-                <div className="w-full">
+                {modalFor !== 'view' && <div className="w-[900px] ">
 
-                    <span className="w-full px-[25px] h-[60px] border-b border-slate-300 flex items-center justify-between ">
+                    <span className="w-full px-[25px] h-[60px] shadow-md border-b flex items-center justify-between ">
                         {modalFor == 'create' ? <p className="text-lg font-[500] ">New User</p> :
                         <div className="flex justify-start items-center gap-5">
                             <Avatar user={selectedItem} isActive={isActive} toggleActive={toggleActive} />
@@ -272,7 +275,73 @@ const User_modal = () => {
                     </div>
 
 
-                </div>
+                </div>}
+
+                {
+                    modalFor == 'view' && 
+                    <div className="w-[500px] pb-[10px] ">
+                        <span className="w-full px-[25px] h-[60px]  flex items-center justify-between shadow-md ">
+                        
+                            <div className="flex justify-start items-center gap-5">
+                                <Avatar user={selectedItem} isActive={selectedItem.is_active} toggleActive={toggleActive} />
+                                <p className="text-md font-[500] ">{selectedItem.first_name} {selectedItem.last_name}</p>
+                            </div>
+
+
+                            {!selectedItem.is_active && <div className="w-[30px] h-[30px]  ">
+                                <IoIosFlag size={'100%'} className='text-red-500' /> 
+                                </div>}
+
+                        </span>
+
+                        <div className="w-full flex flex-col items-start justify-start gap-[5px]">
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Last Name</p>
+                                <p className="text-sm font-[500] ">{selectedItem.last_name}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">First Name</p>
+                                <p className="text-sm font-[500] ">{selectedItem.first_name}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Business Name</p>
+                                <p className="text-sm font-[500] ">{selectedItem.business_name}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Email</p>
+                                <p className="text-sm font-[500] flex-1">{selectedItem.email}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Phone</p>
+                                <p className="text-sm font-[500] flex-1"> {selectedItem.code} {selectedItem.phone}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">City</p>
+                                <p className="text-sm font-[500] flex-1"> {selectedItem.city} </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">State</p>
+                                <p className="text-sm font-[500] flex-1"> {selectedItem.state} </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Zip Code</p>
+                                <p className="text-sm font-[500] flex-1"> {selectedItem.zip} </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Address</p>
+                                <p className="text-sm font-[500] flex-1"> {selectedItem.address}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Created On</p>
+                                <p className="text-sm font-[500] flex-1"> {moment(Number(selectedItem.updated_at)).calendar()}</p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full px-[25px]">
+                                <p className="text-sm w-[130px]">Last updated on</p>
+                                <p className="text-sm font-[500] flex-1"> {moment(Number(selectedItem.updated_at)).calendar()} </p>
+                            </span>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     )

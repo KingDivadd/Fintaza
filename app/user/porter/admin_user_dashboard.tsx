@@ -6,6 +6,7 @@ import Route_navigation from "../../component/route_navigation"
 import { useChat } from '../../context/ChatContext'
 import Admin_dashboard from '../../component/admin_dashboard'
 import User_management_page  from '../../pages/admin_user_manag_page'
+import LoanManagement from '../../pages/loan_management_page'
 
 
 
@@ -22,6 +23,7 @@ const Admin_User_dashboard = () => {
 
                     { route_nav == 'dashboard' && <Admin_dashboard /> }
                     { route_nav == 'user-management' && <User_management_page /> }
+                    { route_nav == 'loan-management' && <LoanManagement /> }
 
 
                     {/* {nav === "dashboard" && <Dashboard />}

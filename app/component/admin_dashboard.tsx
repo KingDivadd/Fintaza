@@ -154,15 +154,15 @@ const Admin_dashboard = () => {
                                             <p className="text-sm font-[500] w-[20%] px-[15px] ">Kelvin Herts</p>
                                             <p className="text-sm font-[500] w-[15%] px-[15px] text-teal-700 ">$7,500</p>
                                             
-                                            {ind % 2 == 1 ? <p className="text-sm font-[500] w-[15%] px-[15px] text-amber-600">Pending</p>
+                                            {ind == 1 ? <p className="text-sm font-[500] w-[15%] px-[15px] text-amber-600">Pending</p>
                                             :<p className="text-sm font-[500] w-[15%] px-[15px] text-teal-700">Approved</p>}
 
-                                            {ind % 2 == 1 ? <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-between items-center ">
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-teal-700 hover:bg-teal-800">Accept</button> 
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-red-600 hover:bg-red-700">Reject</button>
+                                            {ind == 1 ? <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-start gap-5 items-center ">
+                                                <button className="h-[27.5px] px-5 rounded-[3px]  text-white bg-teal-700 hover:bg-teal-800">accept</button> 
+                                                <button className="h-[27.5px] px-5 rounded-[3px]  text-white bg-red-600 hover:bg-red-700">reject</button>
                                             </span>:
-                                            <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-end">
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  border border-slate-500 hover:border-blue-600 text-black hover:text-blue-600">view</button>
+                                            <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-start">
+                                                <button className="h-[27.5px] px-5 rounded-[3px] bg-blue-600 hover:bg-blue-700 text-white hover">view</button>
                                             </span>}
                                         </span>
                                     )

@@ -197,6 +197,13 @@ const User_management_page = () => {
         setSelectedItem(data)
     }
 
+    function handle_view(data:any) {
+        setShowModal(!showModal)
+        setModalFor('view')
+        setModalSource('user-modal')
+        setSelectedItem(data)
+    }
+
     function handle_list_no(data:any) {
         if (data == 'all') {
             setList_number(0)
@@ -305,14 +312,14 @@ const User_management_page = () => {
                                                 {first_name} {last_name}
                                             </div>
                                             <p className="text-sm font-[500] w-[22%] px-[15px] flex-wrap text-start">{email}</p>
-                                            <p className={user_role == 'admin' ? "text-sm font-[500] w-[10%] px-[15px] text-blue-600": "text-sm font-[500] w-[10%] px-[15px]  "}>{user_role == 'admin' ? 'Admin' : 'User'}</p>
+                                            <p className={user_role == 'admin' ? "text-sm font-[500] w-[10%] px-[15px] text-lime-700": "text-sm font-[500] w-[10%] px-[15px] text-blue-600 "}>{user_role == 'admin' ? 'Admin' : 'User'}</p>
                                             <span className=" w-[10%] px-[15px] flex items-center justify-start " >
-                                                {is_active ? <p className="text-sm text-teal-700 font-[500]  ">Active</p> : <p className="text-sm text-red-600 font-[500]  ">Suspended</p>}
+                                                {is_active ? <p className="text-sm text-lime-700 font-[500]  ">Active</p> : <p className="text-sm text-red-600 font-[500]  ">Suspended</p>}
                                             </span>
                                             <span className=" w-[22%] px-[15px] flex items-center justify-start gap-[15px]" >
-                                                <button className="px-[15px] h-[30px] text-sm rounded-[5px] text-white bg-teal-700 hover:bg-teal-800" onClick={()=> handle_edit(data)}>View</button>
-                                                <button className="px-[15px] h-[30px] text-sm rounded-[5px] text-white bg-amber-600 hover:bg-amber-700" onClick={()=> handle_edit(data)}>Edit</button>
-                                                <button className="px-[15px] h-[30px] text-sm rounded-[5px] text-white bg-red-600 hover:bg-red-700">Delete</button>
+                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[5px] text-white bg-teal-700 hover:bg-teal-800" onClick={()=> handle_view(data)}>view</button>
+                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[5px] text-white bg-amber-600 hover:bg-amber-700" onClick={()=> handle_edit(data)}>edit</button>
+                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[5px] text-white bg-red-600 hover:bg-red-700">delete</button>
                                             </span>
                                             
                                         </span>
