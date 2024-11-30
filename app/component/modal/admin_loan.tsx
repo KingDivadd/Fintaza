@@ -58,7 +58,8 @@ const Admin_loan = () => {
                     {alert.message && <Alert message={alert.message} type={alert.type} />} 
                 </span>
 
-                {modalFor == 'view' && !show_repayment_table && <div className="w-[90vw] flex flex-col items-start justify-start   "> 
+                {modalFor == 'view' && !show_repayment_table && 
+                <div className="w-[90vw] flex flex-col items-start justify-start   "> 
                     <div className="w-full flex flex-col items-start justify-start shadow-md border-b border-slate-100 px-[15px] bg-white ">
                         <span className="w-full h-[60px] flex items-center justify-between border-b border-slate-300  ">
                             <p className="text-lg font-[600] ">Loan: BL10002060</p>
@@ -74,111 +75,111 @@ const Admin_loan = () => {
                         </div>
                     </div>
                     
-                <div className="mt-[15px] w-full flex flex-wrap items-start justify-between gap-[15px] px-[15px] pt-0 h-[500px] overflow-y-auto ">
-                    <div className="w-[400px] h-[500px] flex flex-col item-start overflow-y-auto ">
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Full Name</p>
-                            <p className="text-sm font-[500] flex-1"> Babangida Ibrahim </p>
-                        </span>
+                    <div className="mt-[15px] w-full flex flex-wrap items-start justify-between gap-[15px] px-[15px] pt-0 h-[500px] overflow-y-auto ">
+                        <div className="w-[400px] h-[500px] flex flex-col item-start overflow-y-auto ">
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Full Name</p>
+                                <p className="text-sm font-[500] flex-1"> Babangida Ibrahim </p>
+                            </span>
 
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Business Name</p>
-                            <p className="text-sm font-[500] flex-1"> DivadLabs </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Phone</p>
-                            <p className="text-sm font-[500] flex-1"> +234 90260392 </p>
-                        </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Business Name</p>
+                                <p className="text-sm font-[500] flex-1"> DivadLabs </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Phone</p>
+                                <p className="text-sm font-[500] flex-1"> +234 90260392 </p>
+                            </span>
+                            
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Email</p>
+                                <p className="text-sm font-[500] flex-1"> ibrahim.babangida@gmail.com </p>
+                            </span>
+
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Zip</p>
+                                <p className="text-sm font-[500] flex-1"> 12345 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">State</p>
+                                <p className="text-sm font-[500] flex-1"> Texas </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">City</p>
+                                <p className="text-sm font-[500] flex-1"> Dublin </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">SSN</p>
+                                <p className="text-sm font-[500] flex-1"> ************ </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Date of Birth</p>
+                                <p className="text-sm font-[500] flex-1"> 14 November, 1987 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]">Marital Status</p>
+                                <p className="text-sm font-[500] flex-1"> Married </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[130px]"> Dependants</p>
+                                <p className="text-sm font-[500] flex-1"> 3 </p>
+                            </span>
+                        </div>
+
+                        <div className="w-[400px] h-[500px] flex flex-col item-start overflow-y-auto">
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[190px]">Loan Id</p>
+                                <p className="text-sm font-[500] flex-1"> BL10002060 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[190px]">Loan Type</p>
+                                <p className="text-sm font-[500] flex-1"> Personal Loan </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[190px]">Loan Amount</p>
+                                <p className="text-sm font-[500] flex-1"> $10,500 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[190px]">Interest Rate</p>
+                                <p className="text-sm font-[500] flex-1"> 30% </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[190px]">Disbursment Date</p>
+                                <p className="text-sm font-[500] flex-1"> 19 November, 2024 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[190px]">Repayment Date</p>
+                                <p className="text-sm font-[500] flex-1"> 18 December, 2024 </p>
+                            </span>
+                        </div>
+
+                        <div className="w-[400px] h-[500px] flex flex-col item-start overflow-y-auto">
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[175px]">Repayment Schedule</p>
+                                <p className="text-sm font-[500] flex-1"> Monthly </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[175px]">Total Amount Paid</p>
+                                <p className="text-sm font-[500] flex-1"> $7,250 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[175px]">Outstanding Balance</p>
+                                <p className="text-sm font-[500] flex-1 text-amber-600"> $5,850.45 </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[175px]">Payment Mode</p>
+                                <p className="text-sm font-[500] flex-1 "> Auto Debit </p>
+                            </span>
+                            <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
+                                <p className="text-sm w-[175px]">Late Payment</p>
+                                <p className="text-sm font-[500] flex-1 "> $0 </p>
+                            </span>
+
+                            <p className="text-sm font-[500] mt-10 text-blue-600 hover:underline cursor-pointer" onClick={()=> setShow_repayment_table(true)}>View repayment table</p>
+                        </div>
+
+                    </div>
                         
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Email</p>
-                            <p className="text-sm font-[500] flex-1"> ibrahim.babangida@gmail.com </p>
-                        </span>
-
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Zip</p>
-                            <p className="text-sm font-[500] flex-1"> 12345 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">State</p>
-                            <p className="text-sm font-[500] flex-1"> Texas </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">City</p>
-                            <p className="text-sm font-[500] flex-1"> Dublin </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">SSN</p>
-                            <p className="text-sm font-[500] flex-1"> ************ </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Date of Birth</p>
-                            <p className="text-sm font-[500] flex-1"> 14 November, 1987 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]">Marital Status</p>
-                            <p className="text-sm font-[500] flex-1"> Married </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[130px]"> Dependants</p>
-                            <p className="text-sm font-[500] flex-1"> 3 </p>
-                        </span>
-                    </div>
-
-                    <div className="w-[400px] h-[500px] flex flex-col item-start overflow-y-auto">
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[190px]">Loan Id</p>
-                            <p className="text-sm font-[500] flex-1"> BL10002060 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[190px]">Loan Type</p>
-                            <p className="text-sm font-[500] flex-1"> Personal Loan </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[190px]">Loan Amount</p>
-                            <p className="text-sm font-[500] flex-1"> $10,500 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[190px]">Interest Rate</p>
-                            <p className="text-sm font-[500] flex-1"> 30% </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[190px]">Disbursment Date</p>
-                            <p className="text-sm font-[500] flex-1"> 19 November, 2024 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[190px]">Repayment Date</p>
-                            <p className="text-sm font-[500] flex-1"> 18 December, 2024 </p>
-                        </span>
-                    </div>
-
-                    <div className="w-[400px] h-[500px] flex flex-col item-start overflow-y-auto">
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[175px]">Repayment Schedule</p>
-                            <p className="text-sm font-[500] flex-1"> Monthly </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[175px]">Total Amount Paid</p>
-                            <p className="text-sm font-[500] flex-1"> $7,250 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[175px]">Outstanding Balance</p>
-                            <p className="text-sm font-[500] flex-1 text-amber-600"> $5,850.45 </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[175px]">Payment Mode</p>
-                            <p className="text-sm font-[500] flex-1 "> Auto Debit </p>
-                        </span>
-                        <span className="flex items-center justify-start gap-5 min-h-[45px] w-full ">
-                            <p className="text-sm w-[175px]">Late Payment</p>
-                            <p className="text-sm font-[500] flex-1 "> $0 </p>
-                        </span>
-
-                        <p className="text-sm font-[500] mt-10 text-blue-600 hover:underline cursor-pointer" onClick={()=> setShow_repayment_table(true)}>View repayment table</p>
-                    </div>
-
-                </div>
-                    
                 </div>}
 
                 {modalFor == 'view' && show_repayment_table && <div className="w-[90vw] flex flex-col items-start justify-start   "> 

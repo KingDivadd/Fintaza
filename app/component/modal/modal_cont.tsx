@@ -5,6 +5,7 @@ import Alert from "../helper"
 
 import User_modal from "./user_modal"
 import Admin_loan from "./admin_loan"
+import Payments_modal from "./payments_modal"
 
 
 interface Modal_props {
@@ -69,6 +70,7 @@ const Modal_cont = ({ showModal, setShowModal, selectedItem, setSelectedItem, mo
 
                             {modalSource  == 'user-modal' && <User_modal />}
                             {modalSource  == 'admin-loan' && <Admin_loan />}
+                            {modalSource  == 'payments' && <Payments_modal />}
 
                             </div>
                         </div>

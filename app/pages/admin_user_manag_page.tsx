@@ -312,7 +312,7 @@ const User_management_page = () => {
                                                 {first_name} {last_name}
                                             </div>
                                             <p className="text-sm font-[500] w-[22%] px-[15px] flex-wrap text-start">{email}</p>
-                                            <p className={user_role == 'admin' ? "text-sm font-[500] w-[10%] px-[15px] text-lime-700": "text-sm font-[500] w-[10%] px-[15px] text-blue-600 "}>{user_role == 'admin' ? 'Admin' : 'User'}</p>
+                                            <p className={user_role == 'admin' ? "text-sm font-[500] w-[10%] px-[15px] text-lime-700": "text-sm font-[500] w-[10%] px-[15px] text-blue-600 "}>{user_role == 'admin' ? 'Admin' : 'Customer'}</p>
                                             <span className=" w-[10%] px-[15px] flex items-center justify-start " >
                                                 {is_active ? <p className="text-sm text-lime-700 font-[500]  ">Active</p> : <p className="text-sm text-red-600 font-[500]  ">Suspended</p>}
                                             </span>
