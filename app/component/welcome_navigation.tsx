@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import {useRouter} from 'next/navigation'
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { useChat } from '../context/ChatContext';
-import { get_todays_date, readable_day, Show_current_date_time } from './helper';
+import { get_todays_date,  Show_current_date_time } from './helper';
 
 const Welcome_navigation = () => {
     const {close_welcome_nav, setClose_welcome_nav, user_role, setUser_role} = useChat()

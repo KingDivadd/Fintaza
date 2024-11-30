@@ -395,9 +395,9 @@ export const Dropdown: React.FC<DropdownProps> = ({ id, options, placeholder = "
     }, []);
 
     return (
-    <div className="relative w-full" ref={dropdownRef}>
+    <div className="relative w-full h-full" ref={dropdownRef}>
         <button
-        className="w-full bg-white border border-slate-400 rounded-[3px] shadow-sm px-[10px] h-[45px] text-left text-sm focus:ring-blue-500"
+        className="w-full bg-white border border-slate-400 rounded-[3px] shadow-sm px-[10px] h-full text-left text-sm focus:ring-blue-500"
         onClick={toggleDropdown}
         >
         {selectedOption || placeholder}

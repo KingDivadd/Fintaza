@@ -9,6 +9,7 @@ import User_management_page  from '../../pages/admin_user_manag_page'
 import LoanManagement from '../../pages/loan_management_page'
 import Payment from '../../pages/admin_payment_page'
 import Report_analytics_page from '../../pages/report_analytics_page'
+import DocumentPage from '../../pages/admin_document_page'
 
 
 
@@ -28,6 +29,7 @@ const Admin_User_dashboard = () => {
                     { route_nav == 'loan-management' && <LoanManagement /> }
                     { route_nav == 'payments' && <Payment /> }
                     { route_nav == 'reports' && <Report_analytics_page /> }
+                    { route_nav == 'documents' && <DocumentPage /> }
 
 
                     {/* {nav === "dashboard" && <Dashboard />}

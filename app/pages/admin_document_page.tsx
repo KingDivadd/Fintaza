@@ -4,7 +4,7 @@ import Modal_cont from '../component/modal/modal_cont'
 import { useChat } from '../context/ChatContext'
 import { Dropdown } from '../component/helper'
 
-const Payment = () => {
+const DocumentPage = () => {
     const [page_number, setPage_number] = useState(1)
     const [lead_box, setLead_box] = useState<Leads_Props | null>(null);
     const [filtered_lead_box, setFiltered_lead_box] = useState<Leads_Props | null>(null);
@@ -88,17 +88,10 @@ const Payment = () => {
         return pages;
     };  
 
-    function handle_edit(data:any) {
-        setShowModal(!showModal)
-        setModalFor('edit')
-        setModalSource('payments')
-        setSelectedItem(data)
-    }
-
     function handle_view(data:any) {
         setShowModal(!showModal)
         setModalFor('view')
-        setModalSource('payments')
+        setModalSource('admin-document')
         setSelectedItem(data)
     }
 
@@ -113,47 +106,42 @@ const Payment = () => {
                 {/* section showing metrics */}
                 <div className="w-full flex flex-wrap items-center justify-between gap-10">
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-blue-600">$125,000</p>
-                        <p className="text-md text-center text-blue-600">Total Payments Collected</p>
+                        <p className="text-3xl font-[600] text-blue-600">1,500</p>
+                        <p className="text-md text-center text-blue-600">Total Documents</p>
                     </span>
 
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-amber-600">$8,450</p>
-                        <p className="text-md text-center text-amber-600">Total Payments Pending</p>
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-red-600">$3,200</p>
-                        <p className="text-md text-center text-red-600 ">Total Overdue Payments</p>
-
+                        <p className="text-3xl font-[600] text-amber-600">120</p>
+                        <p className="text-md text-center text-amber-600">Pending Approvals</p>
                     </span>
 
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
 
-                        <p className="text-3xl font-[600] text-amber-600">230</p>
-                        <p className="text-md text-center text-amber-600 mx-auto w-[80%] ">Active Payment Plans</p>
+                        <p className="text-3xl font-[600] text-teal-600">1300</p>
+                        <p className="text-md text-center text-teal-600 ">Approved Docuements</p>
 
                     </span>
 
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
 
-                        <p className="text-3xl font-[600] text-blue-600">$1,500</p>
-                        <p className="text-md text-center text-blue-600  mx-auto w-[60%] ">Refunds Processed</p>
+                        <p className="text-3xl font-[600] text-red-600">80</p>
+                        <p className="text-md text-center text-red-600 mx-auto ">Rejected Documents</p>
 
                     </span>
+
                 </div>
 
                 {/* section four recent transaction table */}
                 <div className="w-full flex flex-col items-start justify-start shadow-lg  rounded-[3px] border border-slate-200">
                     <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300 ">
-                        <p className="text-md font-[600] ">Loan Payments</p>
+                        <p className="text-md font-[600] ">Reports</p>
                     </span>
                     
                     <span className="w-full flex items-center justify-end p-[15px] pb-0 ">
                         <span className="w-[250px] h-[35px] mr-10 ">
-                            <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Select Repayment Status' id='repayment_status' onSelect={handle_select} />
+                            <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Select Status' id='repayment_status' onSelect={handle_select} />
                         </span>
+
                         <span className="w-[200px] ">
                             <input type="text" placeholder='search' className='input-type-2 ' />
                         </span>
@@ -162,13 +150,11 @@ const Payment = () => {
 
                     <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
                         <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[13.5%] px-[15px] ">Last Updated</p>
-                            <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Loan Id</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Borrower Name</p>
-                            <p className="text-sm font-[600] w-[14%] px-[15px] ">Due Date</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Total Amount</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount Due</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
+                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Id</p>
+                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Name</p>
+                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Uploaded By</p>
+                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Upload Date</p>
+                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Status</p>
                             <p className="text-sm font-[600] w-[15%] px-[15px] ">Action</p>
                         </span>
 
@@ -177,20 +163,17 @@ const Payment = () => {
                                 {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
                                     return(
                                         <span key={ind} className="table-body-row-1  ">
-                                            <p className="text-sm font-[500] w-[13.5%] px-[15px] text-slate-600">30 November, 2024</p>
-
-                                            <span className="w-[12.5%] px-[15px] ">
-                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >BL1000207{ind}</p>
+                                            <span className="w-[17%] px-[15px]  ">
+                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >DC1000207{ind}</p>
                                             </span>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">Ibrahim Babangida</p>
-                                            <p className="text-sm font-[500] w-[14%] px-[15px] text-slate-600">31 November, 2024</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] text-slate-600">$10,000</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] text-slate-600">$10,000</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] text-slate-600">Pending</p>   {/* pending paid overdue */}
-
-                                            <span className="w-[15%] flex items-center justify-start gap-[15px] ">
-                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-teal-700 hover:bg-teal-800 text-white " onClick={()=> handle_view(data)}>view</button>
-                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-amber-600 hover:bg-amber-700 text-white " onClick={()=> handle_edit(data)}>edit</button>
+                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">ID_Verification.pdf</p>
+                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Ibrahim Babangida</p>
+                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">27 November, 2024</p>
+                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Pending</p>  {/* pending approved rejected */}
+                                            <span className="w-[15%] px-[15px] flex items-center justify-start ">
+                                                <button className="h-[27.5px] px-5 rounded-[2.5px] bg-teal-700 text-white " onClick={()=> handle_view(data)}>
+                                                    view
+                                                </button>
                                             </span>
                                             
                                         </span>
@@ -223,4 +206,4 @@ const Payment = () => {
     )
 }
 
-export default Payment
+export default DocumentPage

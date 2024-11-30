@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import Modal_cont from '../component/modal/modal_cont'
 import { useChat } from '../context/ChatContext'
+import { Dropdown } from '../component/helper'
 
 const Report_analytics_page = () => {
     const [page_number, setPage_number] = useState(1)
@@ -101,6 +102,10 @@ const Report_analytics_page = () => {
         setSelectedItem(data)
     }
 
+    function handle_select( selected: string, id?: string) {
+        console.log(id, selected)
+    }
+
     return (
         <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
             <div className="w-full flex flex-col justify-start items-center gap-10">
@@ -146,6 +151,9 @@ const Report_analytics_page = () => {
                     </span>
                     
                     <span className="w-full flex items-center justify-end p-[15px] pb-0 ">
+                        <span className="w-[250px] h-[35px] mr-10 ">
+                            <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Select Repayment Status' id='repayment_status' onSelect={handle_select} />
+                        </span>
 
                         <span className="w-[200px] ">
                             <input type="text" placeholder='search' className='input-type-2 ' />
