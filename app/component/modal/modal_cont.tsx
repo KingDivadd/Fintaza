@@ -7,6 +7,7 @@ import User_modal from "./user_modal"
 import Admin_loan from "./admin_loan"
 import Payments_modal from "./payments_modal"
 import DocumentModal from "./document_modal"
+import AdminTicketModal from "./admin_ticket_modal"
 
 
 interface Modal_props {
@@ -73,6 +74,7 @@ const Modal_cont = ({ showModal, setShowModal, selectedItem, setSelectedItem, mo
                             {modalSource  == 'admin-loan' && <Admin_loan />}
                             {modalSource  == 'payments' && <Payments_modal />}
                             {modalSource  == 'admin-document' && <DocumentModal />}
+                            {modalSource  == 'admin-ticket' && <AdminTicketModal />}
 
                             </div>
                         </div>

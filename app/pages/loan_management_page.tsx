@@ -173,7 +173,7 @@ const LoanManagement = () => {
                             <p className="text-sm font-[600] w-[10%] px-[15px] ">Loan Term</p>
                             <p className="text-sm font-[600] w-[15%] px-[15px] ">Loan Status</p>
                             <p className="text-sm font-[600] w-[15%] px-[15px] ">Date Created</p>
-                            <p className="text-sm font-[600] w-[22.5%] px-[15px] ">Status</p>
+                            <p className="text-sm font-[600] w-[22.5%] px-[15px] ">Action</p>
                         </span>
 
                         <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
@@ -184,11 +184,11 @@ const LoanManagement = () => {
                                             <span className="w-[12.5%] px-[15px] ">
                                                 <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >BL1000207{ind}</p>
                                             </span>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] ">Ibrahim Babangida</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">$10,000</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">24 Months</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-teal-700 ">Pending Review</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] ">20 November, 2024</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">Ibrahim Babangida</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">$10,000</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">24 Months</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] text-teal-700 ">Pending Review</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">20 November, 2024</p>
 
                                             <span className="w-[22.5%] flex items-center justify-start gap-[15px] ">
                                                 <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-teal-700 hover:bg-teal-800 text-white " onClick={()=> handle_view(data)}>view</button>

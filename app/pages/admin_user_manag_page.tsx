@@ -293,7 +293,7 @@ const User_management_page = () => {
 
                         {loading ? 
                         
-                        <div className="w-full h-[200px] flex items-center justify-center">
+                        <div className="w-full h-[500px] flex items-center justify-center">
                             <Loading />
                         </div>
                         :

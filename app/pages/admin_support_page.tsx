@@ -2,14 +2,15 @@
 import React, {useState, useEffect} from 'react'
 import Modal_cont from '../component/modal/modal_cont'
 import { useChat } from '../context/ChatContext'
-import { Dropdown } from '../component/helper'
+import Alert, { Dropdown } from '../component/helper'
 
-const DocumentPage = () => {
+const Admin_support_page = () => {
     const [page_number, setPage_number] = useState(1)
     const [lead_box, setLead_box] = useState<Leads_Props | null>(null);
     const [filtered_lead_box, setFiltered_lead_box] = useState<Leads_Props | null>(null);
     const [filters, setFilters] = useState({filter_input: '', disposition: ''})
     const {modalFor, setModalFor, selectedItem, setSelectedItem, showModal, setShowModal, setModalSource, modalSource} = useChat()
+    const [alert, setAlert] = useState({message: '', type: ''})
 
     interface Leads_Props {
         forEach?(arg0: (data: any, ind: number) => void): unknown;
@@ -88,74 +89,94 @@ const DocumentPage = () => {
         return pages;
     };  
 
-    function handle_view(data:any) {
+    function handle_edit(data:any) {
         setShowModal(!showModal)
-        setModalFor('view')
-        setModalSource('admin-document')
+        setModalFor('edit')
+        setModalSource('admin-ticket')
         setSelectedItem(data)
     }
 
-    function handle_select( selected: string, id?: string) {
+    function handle_view(data:any) {
+        setShowModal(!showModal)
+        setModalFor('view')
+        setModalSource('admin-ticket')
+        setSelectedItem(data)
+    }
+
+    function handle_select(selected: string, id?:string){
         console.log(id, selected)
     }
 
-    return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
-            <div className="w-full flex flex-col justify-start items-center gap-10">
 
-                {/* section showing metrics */}
+    return (
+        <div className='w-full flex items-start justify-center px-[75px] py-10 relative'  >
+            <span className="px-[20px] flex items-center justify-end absolute top-[15px] right-[50px] z-20 h-[50px]  ">
+
+            {alert.message && <Alert message={alert.message} type={alert.type} />} 
+            </span>
+            <div className="w-full flex flex-col justify-start items-center gap-10">                
+
+                {/* Metrics */}
                 <div className="w-full flex flex-wrap items-center justify-between gap-10">
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-blue-600">1,500</p>
-                        <p className="text-md text-center text-blue-600">Total Documents</p>
+                        <p className="text-3xl font-[600] text-blue-600">1,00</p>
+                        <p className="text-md text-center text-blue-600">Total Tickets</p>
                     </span>
 
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-amber-600">120</p>
-                        <p className="text-md text-center text-amber-600">Pending Approvals</p>
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-teal-600">1300</p>
-                        <p className="text-md text-center text-teal-600 ">Approved Docuements</p>
-
+                        <p className="text-3xl font-[600] text-red-600">320</p>
+                        <p className="text-md text-center text-red-600">Open Tickets</p>
                     </span>
 
                     <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
 
-                        <p className="text-3xl font-[600] text-red-600">80</p>
-                        <p className="text-md text-center text-red-600 mx-auto ">Rejected Documents</p>
+                        <p className="text-3xl font-[600] text-amber-600">150</p>
+                        <p className="text-md text-center text-amber-600 ">Tickets In Progress</p>
 
                     </span>
 
+                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+
+                        <p className="text-3xl font-[600] text-blue-600">650</p>
+                        <p className="text-md text-center text-blue-600 mx-auto w-[80%] ">Resolved Tickets</p>
+
+                    </span>
+
+                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+
+                        <p className="text-3xl font-[600] text-teal-700">80</p>
+                        <p className="text-md text-center text-teal-700  mx-auto w-[60%] ">Closed Tickets</p>
+
+                    </span>
                 </div>
+
 
                 {/* section four recent transaction table */}
                 <div className="w-full flex flex-col items-start justify-start shadow-lg  rounded-[3px] border border-slate-200">
                     <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300 ">
-                        <p className="text-md font-[600] ">Documents</p>
+                        <p className="text-md font-[600] ">Support Tickets</p>
                     </span>
                     
-                    <span className="w-full flex items-center justify-end p-[15px] pb-0 ">
-                        <span className="w-[250px] h-[45px] mr-10 ">
-                            <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Select Status' id='repayment_status' onSelect={handle_select} />
-                        </span>
+                    <div className="w-full flex items-center justify-between gap-5 px-[15px] pt-[15px]">
+                        <div className="w-full flex items-center justify-start gap-5">
+                            <span className="w-[250px] "><input type="text" placeholder='search...' className="input-type-1" /> </span>
+                            <span className="h-[45px] w-[200px] "><Dropdown options={['Open', 'In Progress', 'Resolved', 'Closed']} id='status' placeholder='Status' onSelect={handle_select} /> </span>
+                            <span className="h-[45px] w-[200px] "><Dropdown options={['High', 'Medium', 'Low']} id='priority' placeholder='Priority' onSelect={handle_select} /> </span>
+                        </div>
 
-                        <span className="w-[200px] ">
-                            <input type="text" placeholder='search' className='input-type-1 ' />
-                        </span>
-
-                    </span>
+                        <button className="h-[45px] bg-blue-600 hover:bg-blue-700 text-white rounded-[3px] px-5 whitespace-nowrap ">Create Ticket</button>
+                    </div>
 
                     <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
                         <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Id</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Name</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Uploaded By</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Upload Date</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Status</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Action</p>
+                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Ticket ID</p>
+                            <p className="text-sm font-[600] w-[12.5%] px-[15px] ">User Name</p>
+                            <p className="text-sm font-[600] w-[17.5%] px-[15px] ">Subject</p>
+                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Date Submitted</p>
+                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Priority</p>
+                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
+                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Assigned To</p>
+                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Action</p>
                         </span>
 
                         <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
@@ -163,17 +184,18 @@ const DocumentPage = () => {
                                 {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
                                     return(
                                         <span key={ind} className="table-body-row-1  ">
-                                            <span className="w-[17%] px-[15px]  ">
-                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >DC1000207{ind}</p>
+                                            <span className="w-[10%] px-[15px] ">
+                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >TC1000207{ind}</p>
                                             </span>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">ID_Verification.pdf</p>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Ibrahim Babangida</p>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">27 November, 2024</p>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Pending</p>  {/* pending approved rejected */}
-                                            <span className="w-[15%] px-[15px] flex items-center justify-start ">
-                                                <button className="h-[27.5px] px-5 rounded-[2.5px] bg-teal-700 text-white " onClick={()=> handle_view(data)}>
-                                                    view
-                                                </button>
+                                            <p className="text-sm font-[500] text-slate-600 w-[12.5%] px-[15px] ">Ibrahim Babangida</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[17.5%] px-[15px] ">Document Upload Bug</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">20 November, 2024</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">Medium</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">In Progress</p>
+                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">David Iroegbu</p>
+
+                                            <span className="w-[10%] flex items-center justify-start gap-[15px] ">
+                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-teal-700 hover:bg-teal-800 text-white " onClick={()=> handle_view(data)}>view</button>
                                             </span>
                                             
                                         </span>
@@ -206,4 +228,4 @@ const DocumentPage = () => {
     )
 }
 
-export default DocumentPage
+export default Admin_support_page

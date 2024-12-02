@@ -250,3 +250,7 @@
 .drop_down_menu_box_1:hover {
     @apply bg-blue-600 text-white;
 }
+
+.activity-cont-1 {
+    @apply h-auto max-h-[150px] p-[10px] w-full flex items-start justify-start gap-[15px];
+}

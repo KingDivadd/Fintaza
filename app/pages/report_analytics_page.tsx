@@ -151,12 +151,12 @@ const Report_analytics_page = () => {
                     </span>
                     
                     <span className="w-full flex items-center justify-end p-[15px] pb-0 ">
-                        <span className="w-[250px] h-[35px] mr-10 ">
+                        <span className="w-[250px] h-[45px] mr-10 ">
                             <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Select Repayment Status' id='repayment_status' onSelect={handle_select} />
                         </span>
 
                         <span className="w-[200px] ">
-                            <input type="text" placeholder='search' className='input-type-2 ' />
+                            <input type="text" placeholder='search' className='input-type-1 ' />
                         </span>
 
                     </span>
