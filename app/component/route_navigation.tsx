@@ -104,9 +104,9 @@ const Route_navigation = () => {
                     <p className="text-sm">Transactions </p>
                 </span>}
 
-                <span className={route_nav == "notification" ? "active-nav-box" : "nav-box"} onClick={()=>{select_nav('notification')}}>
+                {/* <span className={route_nav == "notification" ? "active-nav-box" : "nav-box"} onClick={()=>{select_nav('notification')}}>
                     <p className="text-sm">Notifications</p>
-                </span>
+                </span> */}
 
                 {loggedInUser.user_role === 'user' && <span className={route_nav == "documents" ? "active-nav-box" : "nav-box"} onClick={()=>{select_nav('documents')}}>
                     <p className="text-sm">Documents </p>
@@ -149,10 +149,10 @@ const Route_navigation = () => {
                 {loggedInUser.user_role === 'admin' && <span className={route_nav == "support-center" ? "active-nav-box" : "nav-box"} onClick={()=>{select_nav('support-center')}}>
                     <p className="text-sm">Support Center </p>
                 </span>}
-
+{/* 
                 {loggedInUser.user_role === 'admin' && <span className={route_nav == "audit-logs" ? "active-nav-box" : "nav-box"} onClick={()=>{select_nav('audit-logs')}}>
                     <p className="text-sm">Audit Logs </p>
-                </span>}
+                </span>} */}
 
 
                 
