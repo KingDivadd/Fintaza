@@ -27,7 +27,7 @@ const App_navigation = () => {
         router.push('/auth/login')
     }
     return (
-        <div className="w-full min-h-[100px] px-[75px] flex items-center justify-center  ">
+        <div className="w-full min-h-[80px] px-[75px] flex items-center justify-center  ">
             <div className="w-full h-full flex items-center justify-between">
                 <div className="flex item-center justify-center ">
                     <p className="font-extrabold text-3xl text-blue-600 ">Fintaza</p>
@@ -43,7 +43,7 @@ const App_navigation = () => {
                         
                     </span>
 
-                    <button className="px-[20px] h-[55px] flex items-center justify-center rounded-[3px] gap-[5px]  text-red-500 cursor-pointer border border-red-500 text-red-600 hover:text-white hover:bg-red-500 " onClick={logout}>
+                    <button className="px-[20px] h-[45px] flex items-center justify-center rounded-[3px] gap-[5px]  text-red-500 cursor-pointer border border-red-500 text-red-600 hover:text-white hover:bg-red-500 " onClick={logout}>
                         <span className="h-[22.5px] w-[22.5px] "> <HiOutlinePower size={'100%'} /> </span>
                         <p className="text-md font-medium">Logout</p>
                     </button>

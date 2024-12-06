@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className='relative'>
         <ChatProvider>
-            <div className="container mx-auto ">
+            <div className=" 2xl:container mx-auto ">
               {children}
             </div>
           </ChatProvider>

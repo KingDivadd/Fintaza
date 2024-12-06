@@ -23,13 +23,14 @@ const Signup = () => {
         email: false, password: false, first_name: false, last_name: false, business_name: false, 
         code: false, phone: false, city: false, state: false, zip: false, address: false, 
     })
+    const [submitted, setSubmitted] = useState(false)
 
     const [phase, setPhase] = useState('first')
 
     const handle_change = (e:any)=>{
         const name = e.target.name
         const value = e.target.value
-        setAuth({...auth, [name]:value})
+        setAuth({...auth, [name]:value})        
     }
 
     function showAlert(message: string, type: string){
@@ -41,21 +42,28 @@ const Signup = () => {
 
 
     useEffect(() => {
-        if (auth.email) { 
-            setInputError({...inputError, email: auth.email == ''} );
-            return;
+        if (submitted) {
+            setInputError({
+                first_name: auth.first_name === '',
+                last_name: auth.last_name === '',
+                email: auth.email === '',
+                password: auth.password === '',
+                code: auth.code === '',
+                phone: auth.phone === '',
+                city: auth.city === '',
+                state: auth.state === '',
+                zip: auth.zip === '',
+                address: auth.address === '',
+                business_name: false,
+            });
         }
-        if (auth.password) { 
-            setInputError({...inputError, password: auth.password == ''} ) 
-            return;
-        }
-        
-    }, [auth])
+    }, [auth]);
+    
 
 
     async function handle_signup(e: any) {
         e.preventDefault();
-
+        setSubmitted(!submitted)
         if (!auth.last_name || !auth.first_name || !auth.code || !auth.phone || !auth.email || !auth.password || !auth.city || !auth.state || !auth.address) {
             if (!auth.last_name){ showAlert(`Please provide your last name`, 'warning');  }
             if (!auth.first_name){ showAlert(`Please provide your first name`, 'warning');  }
@@ -66,11 +74,20 @@ const Signup = () => {
             if (!auth.state){ showAlert(`Please provide your state `, 'warning');  }
             if (!auth.last_name && !auth.first_name && !auth.code && !auth.phone && !auth.email && !auth.password && !auth.city && !auth.state && !auth.address){showAlert(`Please enter all requested information`, 'warning')}
             
-            setInputError({
-                ...inputError,
-                email: auth.email === "",
-                password: auth.password === "",
-            });
+            
+                    setInputError({
+                        ...inputError,
+                        first_name: auth.first_name === '',
+                        last_name: auth.last_name === '',
+                        email: auth.email === "",
+                        password: auth.password === "",
+                        code: auth.code === '',
+                        phone: auth.phone === '',
+                        city: auth.city === '',
+                        state: auth.state === '',
+                        zip: auth.zip === '',
+            
+                    });
             return;
         } else {
             setLoading(true); 
@@ -130,7 +147,7 @@ const Signup = () => {
                 <form action='' className="w-full sm:w-[400px] flex flex-col items-start justify-start rounded-[5px] p-[20px] bg-white min-h-[200px] gap-[30px] shadow-lg border border-slate-200 ">
 
                     <span className="w-full flex flex-col items-center justify-start gap-[5px]"> 
-                        <p className="text-[27.5px] font-[700] text-blue-600"> Welcome to FintazaPdl</p>
+                        <p className="text-[25px] sm:text-[27.5px] font-[700] text-blue-600 text-center"> Welcome to FintazaPdl</p>
                         <p className="text-sm font-[500] text-slate-700 text-centeer">Provide all Information</p>
                     </span>
                     
@@ -156,7 +173,7 @@ const Signup = () => {
                 </form>}
 
                 {phase == 'second' && 
-                <form action='' className="w-full sm:w-[400px] flex flex-col items-start justify-start rounded-[5px] p-[20px] bg-white min-h-[200px] py-[30px] gap-[35px] shadow-lg border border-slate-200 ">
+                <form action='' className="w-full sm:w-[400px] flex flex-col items-start justify-start rounded-[5px] p-[20px] bg-white min-h-[200px]  gap-[35px] shadow-lg border border-slate-200 ">
 
                     <span className="w-full flex items-center justify-start gap-[20px] ">
                         <span className=" w-[80px] flex items-center justify-center  ">
@@ -165,13 +182,13 @@ const Signup = () => {
                         <input type="text" name='phone' value={auth.phone} onChange={handle_change} placeholder='Phone'  className={inputError.phone ? 'input-error-1' :'input-type-1 '} />
                     </span>
                     
-                    <input type="text" name='city' value={auth.city} onChange={handle_change} placeholder='City' className='input-type-1 ' />
+                    <input type="text" name='city' value={auth.city} onChange={handle_change} placeholder='City' className={inputError.city ? 'input-error-1':'input-type-1 '} />
                     
-                    <input type="text" name='state' value={auth.state} onChange={handle_change} placeholder='State' className='input-type-1 ' />
+                    <input type="text" name='state' value={auth.state} onChange={handle_change} placeholder='State' className={inputError.state ? 'input-error-1': 'input-type-1 '} />
                     
-                    <input type="text" name='zip' value={auth.zip} onChange={handle_change} placeholder='Zip' className='input-type-1 ' />
+                    <input type="text" name='zip' value={auth.zip} onChange={handle_change} placeholder='Zip' className={inputError.zip ? 'input-error-1': 'input-type-1 '} />
                     
-                    <textarea name="address" value={auth.address} id="address" onChange={handle_change} placeholder='Address' rows={3} className='text-area-input-1' ></textarea>
+                    <textarea name="address" value={auth.address} id="address" onChange={handle_change} placeholder='Address' rows={3} className={inputError.address ? 'input-error-1' : 'text-area-input-1'} ></textarea>
 
                     <span className="text-sm flex items-center justify-center gap-[5px] mx-auto">
                         Already have account? <p className="text-sm text-blue-600 hover:underline" onClick={()=> router.push('/auth/login')}>Login</p> 

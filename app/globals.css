@@ -156,11 +156,11 @@
 /* navigation buttons */
 
 .nav-box {
-    @apply px-[15px] h-[50px] flex items-center justify-center relative text-slate-800 whitespace-nowrap;
+    @apply px-[15px] h-[50px] flex items-center justify-center relative text-slate-800 whitespace-nowrap border border-white;
 }
 
 .nav-box:hover {
-    @apply bg-blue-400 text-white cursor-pointer;
+    @apply border border-blue-600 cursor-pointer;
 }
 
 .active-nav-box {

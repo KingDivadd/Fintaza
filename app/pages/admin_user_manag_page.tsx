@@ -317,9 +317,9 @@ const User_management_page = () => {
                                                 {is_active ? <p className="text-sm text-lime-700 font-[500]  ">Active</p> : <p className="text-sm text-red-600 font-[500]  ">Suspended</p>}
                                             </span>
                                             <span className=" w-[22%] px-[15px] flex items-center justify-start gap-[15px]" >
-                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[5px] text-white bg-teal-700 hover:bg-teal-800" onClick={()=> handle_view(data)}>view</button>
-                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[5px] text-white bg-amber-600 hover:bg-amber-700" onClick={()=> handle_edit(data)}>edit</button>
-                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[5px] text-white bg-red-600 hover:bg-red-700">delete</button>
+                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-teal-700 hover:bg-teal-800" onClick={()=> handle_view(data)}>view</button>
+                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-amber-600 hover:bg-amber-700" onClick={()=> handle_edit(data)}>edit</button>
+                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-red-600 hover:bg-red-700">delete</button>
                                             </span>
                                             
                                         </span>

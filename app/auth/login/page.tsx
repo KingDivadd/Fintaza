@@ -17,6 +17,7 @@ const Login = () => {
     const [inputError, setInputError] = useState({email: false, password: false})
     const [showPassword, setShowPassword] = useState(false)
     const {loggedInUser, setLoggedInUser} = useChat()
+    const [submitted, setSubmitted] = useState(false)
 
 
     useEffect(() => {
@@ -80,13 +81,13 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if (auth.email) { 
-            setInputError({...inputError, email: auth.email == ''} );
-            return;
-        }
-        if (auth.password) { 
-            setInputError({...inputError, password: auth.password == ''} ) 
-            return;
+        if (submitted) {
+            
+            setInputError({
+                ...inputError,
+                email: auth.email === "",
+                password: auth.password === "",
+            });
         }
         
     }, [auth])
@@ -94,6 +95,7 @@ const Login = () => {
 
     async function handle_login(e: any) {
         e.preventDefault();        
+        setSubmitted(!submitted)
 
         if (!auth.email || !auth.password) {
             if (!auth.email){ showAlert('Please provide email address', 'warning');  }
@@ -156,7 +158,7 @@ const Login = () => {
 
 
             <div className=" max-sm:p-[15px] mx-auto flex flex-wrap items-center justify-center gap-[50px] lg:gap-20  "> 
-                <span className=' sm:w-[400px] lg:mb-10 max-sm:text-[35px] max-lg:text-[40px] lg:text-[55px] max-lg:font-[700] lg:font-[800] text-center text-blue-700 flex items-center justify-center whitespace-nowrap'>
+                <span className=' sm:w-[400px] lg:mb-10 max-sm:text-[35px] max-lg:text-[40px] lg:text-[55px] max-lg:font-[700] lg:font-[800] text-center text-blue-700 flex items-center justify-center whitespace-nowrap cursor-pointer' onClick={()=> router.push('/')}>
                     Fintaza<p className="text-amber-600">Pdl</p>
                 </span>
 

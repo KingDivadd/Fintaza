@@ -16,17 +16,6 @@ const Route_navigation = () => {
     const router = useRouter()
     const {close_welcome_nav, setClose_welcome_nav, route_nav, setRoute_nav, user_role, trigger_notification, setTrigger_notification, loggedInUser} = useChat()
 
-        //  now this should be removed, it was added as i dont have a workind db
-
-    // useEffect(() => {
-    //     const loggedInUser.user_role = localStorage.getItem('user_role')
-    //     console.log('user role ', user_role)
-    //     if (!user_role || loggedInUser.user_role == null || !['admin', 'user', 'business_user'].includes(user_role) ){
-    //         router.push('/auth/login')
-    //     }else{
-    //         setuser_role(user_role)
-    //     }
-    // }, [])
 
     useEffect(() => {
         const item = sessionStorage.getItem('nav')
@@ -60,9 +49,9 @@ const Route_navigation = () => {
     return (
         <div className="w-full  px-[75px] flex flex-col justify-center items-center justify-center border-b border-slate-300 shadow-md ">
             {close_welcome_nav && <span className="w-full border-b border-slate-400 mx-auto"></span>}
-            <div className="w-full h-[90px] flex items-center justify-between border-b border-slate-400">
+            <div className="w-full h-[70px] flex items-center justify-between border-b border-slate-400">
                 <span className="flex-1 flex items-center justify-start">
-                    <h4 className="text-3xl font-semibold  flex items-center gap-[10px] ">{`${loggedInUser.first_name} ${loggedInUser.last_name}` || "- -"} </h4>
+                    <h4 className="text-3xl font-semibold  flex items-center gap-[10px] text-blue-600 ">{`${loggedInUser.first_name} ${loggedInUser.last_name}` || "- -"} </h4>
                 </span>
 
                 {loggedInUser.user_role === 'admin' && 

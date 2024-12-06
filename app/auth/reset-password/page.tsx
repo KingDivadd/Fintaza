@@ -119,7 +119,7 @@ const ResetPassword = () => {
                 <form action='' className="w-full sm:w-[400px] flex flex-col items-start justify-start rounded-[5px] p-[20px] bg-white min-h-[200px] py-[30px] gap-[35px] shadow-lg border border-slate-200 ">
 
                     <span className="w-full flex flex-col items-center justify-start gap-[5px]"> 
-                        <p className="text-[27.5px] font-[700] text-blue-600"> Reset Password</p>
+                        <p className="text-[25px] sm:text-[27.5px] font-[700] text-blue-600"> Reset Password</p>
                         <p className="text-sm font-[500] text-slate-700 text-centeer">Create a new password</p>
                     </span>
                     
