@@ -96,7 +96,7 @@ const My_loans = () => {
     }
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <div className="w-full flex flex-col justify-start items-center gap-10">
 
                 {/* section showing loan calculator and the "apply new loan" button */}
@@ -111,39 +111,39 @@ const My_loans = () => {
                 </span>
 
                 {/* section showing metrics */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-10">
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                <div className="w-full flex flex-wrap items-center justify-between gap-[20px] sm:gap-10">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
 
-                        <p className="text-3xl font-[600] text-blue-600">7</p>
-                        <p className="text-md text-blue-600">Total Loans</p>
-
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-amber-600">3</p>
-                        <p className="text-md text-amber-600">Active Loans</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">7</p>
+                        <p className="text-md sm:text-lg font-[500] text-center  text-blue-600">Total Loans</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
 
-                        <p className="text-3xl font-[600] text-teal-700">2</p>
-                        <p className="text-md text-teal-700">Closed Loans</p>
-
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-red-600">2</p>
-                        <p className="text-md text-red-600">Overdue Loans</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">3</p>
+                        <p className="text-md sm:text-lg font-[500] text-center  text-amber-600">Active Loans</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
 
-                        <p className="text-3xl font-[600] text-red-600">$125,250</p>
-                        <p className="text-md text-red-600">Outstanding Balance</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-teal-700">2</p>
+                        <p className="text-md sm:text-lg font-[500] text-center  text-teal-700">Closed Loans</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">2</p>
+                        <p className="text-md sm:text-lg font-[500] text-center  text-red-600">Overdue Loans</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">$125,250</p>
+                        <p className="text-md sm:text-lg font-[500] text-center  text-red-600">Outstanding Balance</p>
 
                     </span>
                 </div>
@@ -157,45 +157,47 @@ const My_loans = () => {
                     <span className="w-full flex items-center justify-end p-[15px] pb-0 ">
 
                         <span className="w-[200px] ">
-                            <input type="text" placeholder='search' className='input-type-2 ' />
+                            <input type="text" placeholder='search' className='input-type-1 ' />
                         </span>
 
                     </span>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Loan ID</p>
-                            <p className="text-sm font-[600] w-[12%] px-[15px] ">Loan Product</p>
-                            <p className="text-sm font-[600] w-[13%] px-[15px] ">Request Date</p>
-                            <p className="text-sm font-[600] w-[12%] px-[15px] ">Applied Amount</p>
-                            <p className="text-sm font-[600] w-[13%] px-[15px] ">Release Date</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Total Payable</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount Paid</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Due Amount</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
-                        </span>
+                    <div className="w-full overflow-x-auto">
+                        <div className="min-w-[1350px] p-[15px] flex flex-col items-start justify-start mx-auto ">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Loan ID</p>
+                                <p className="text-sm font-[600] w-[12%] px-[15px] ">Loan Product</p>
+                                <p className="text-sm font-[600] w-[13%] px-[15px] ">Request Date</p>
+                                <p className="text-sm font-[600] w-[12%] px-[15px] ">Applied Amount</p>
+                                <p className="text-sm font-[600] w-[13%] px-[15px] ">Release Date</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Total Payable</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount Paid</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Due Amount</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
+                            </span>
 
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] text-blue-600 hover:cursor-pointer ">BL1000206{ind}</p>
-                                            <p className="text-sm font-[500] w-[12%] px-[15px] ">{ind % 2 == 1 ? "Business Loan":"General Loan"}</p>
-                                            <p className="text-sm font-[500] w-[13%] px-[15px] ">19 November, 2021</p>
-                                            <p className="text-sm font-[500] w-[12%] px-[15px] ">$10,500</p>
-                                            <p className="text-sm font-[500] w-[13%] px-[15px] ">21 November, 2021</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">$13,120.20</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">$13,120.20</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">$0.00</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700 ">completed</p>
-                                            
-                                        </span>
-                                    )
-                                })}
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
+                                        return(
+                                            <span key={ind} className="table-body-row-1  ">
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] text-blue-600 hover:cursor-pointer ">BL1000206{ind}</p>
+                                                <p className="text-sm font-[500] w-[12%] px-[15px] ">{ind % 2 == 1 ? "Business Loan":"General Loan"}</p>
+                                                <p className="text-sm font-[500] w-[13%] px-[15px] ">19 November, 2021</p>
+                                                <p className="text-sm font-[500] w-[12%] px-[15px] ">$10,500</p>
+                                                <p className="text-sm font-[500] w-[13%] px-[15px] ">21 November, 2021</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] ">$13,120.20</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] ">$13,120.20</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] ">$0.00</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700 ">completed</p>
+                                                
+                                            </span>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">

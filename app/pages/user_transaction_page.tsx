@@ -96,45 +96,45 @@ const User_transaction_page = () => {
     }
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <div className="w-full flex flex-col justify-start items-center gap-10">
 
                 
 
                 {/* section showing metrics */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-10">
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                <div className="w-full flex flex-wrap items-center justify-between gap-[20px] sm:gap-10">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-blue-600">$125,000</p>
-                        <p className="text-md text-blue-600 text-center">Total Loan Disbursed</p>
-
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-teal-600">$10,000</p>
-                        <p className="text-md text-teal-600 text-center">Total Amount Paid</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">$125,000</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600 text-center">Total Loan Disbursed</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-amber-600">$11,500</p>
-                        <p className="text-md text-amber-600 text-center">Outstanding Balance</p>
-
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-red-600">$6,250</p>
-                        <p className="text-md text-red-600 text-center">Total Fees Incured</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-teal-600">$10,000</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-teal-600 text-center">Total Amount Paid</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-amber-600">$5,250</p>
-                        <p className="text-md text-amber-600 text-center">Upcoming Payaments</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">$11,500</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-amber-600 text-center">Outstanding Balance</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">$6,250</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-red-600 text-center">Total Fees Incured</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">$5,250</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-amber-600 text-center">Upcoming Payaments</p>
 
                     </span>
                 </div>
@@ -146,52 +146,54 @@ const User_transaction_page = () => {
                         <p className="text-md font-[600] ">Transactions</p>
                     </span>
                     
-                    <span className="w-full flex items-center justify-between p-[15px] pb-0 ">
+                    <span className="w-full flex items-center justify-between p-[15px] pb-0 gap-5">
                         <span className="w-auto flex items-center gap-5">
                             <button className="h-[45px] px-5 border border-slate-500  rounded-[3px] hover:border-blue-600 hover:text-blue-600 ">
                                 Export PDF
                             </button>
-                            <button className="h-[45px] px-5 border border-slate-500  rounded-[3px] hover:border-blue-600 hover:text-blue-600 ">
+                            <button className="max-sm:hidden h-[45px] px-5 border border-slate-500  rounded-[3px] hover:border-blue-600 hover:text-blue-600 ">
                                 Export CSV
                             </button>
                         </span>
 
-                        <span className="w-[250px] ">
-                            <input type="text" placeholder='search' className='input-type-1 ' />
+                        <span className="w-[150px] ">
+                            <input type="text" placeholder='Search...' className='input-type-1 ' />
                         </span>
 
                     </span>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Transaction ID</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Date</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Type</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px] ">Description</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Status</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] text-center ">Action</p>
-                        </span>
+                    <div className="w-full overflow-x-auto">
+                        <div className="min-w-[1350px] p-[15px] flex flex-col items-start justify-start mx-auto ">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Transaction ID</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Date</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Type</p>
+                                <p className="text-sm font-[600] w-[20%] px-[15px] ">Description</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount</p>
+                                <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Status</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px]  ">Action</p>
+                            </span>
 
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">TR2234431{ind + 1}</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] ">20 November, 2024</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] ">Loan Disbursement</p>
-                                            <p className="text-sm font-[500] w-[20%] px-[15px] ">Payment towards Loan-1001</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">$12,250</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-teal-700 ">Completed</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-blue-700 hover:underline cursor-pointer text-center">View details</p>
-                                            
-                                        </span>
-                                    )
-                                })}
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
+                                        return(
+                                            <span key={ind} className="table-body-row-1  ">
+                                                <p className="text-sm font-[500] w-[12.5%] px-[15px] ">TR2234431{ind + 1}</p>
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] ">20 November, 2024</p>
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] ">Loan Disbursement</p>
+                                                <p className="text-sm font-[500] w-[20%] px-[15px] ">Payment towards Loan-1001</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] ">$12,250</p>
+                                                <p className="text-sm font-[500] w-[12.5%] px-[15px] text-teal-700 ">Completed</p>
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] text-blue-700 hover:underline cursor-pointer ">View details</p>
+                                                
+                                            </span>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">

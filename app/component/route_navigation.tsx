@@ -51,13 +51,13 @@ const Route_navigation = () => {
     return (
         <div className="w-full  px-[20px] md:px-[55px] lg:px-[75px]  flex flex-col justify-center items-center justify-center border-b border-slate-200 shadow-md ">
             {close_welcome_nav && <span className="w-full border-b border-slate-400 mx-auto"></span>}
-            <div className="w-full h-[70px] flex items-center justify-between border-b border-slate-400">
-                <span className="flex-1 flex items-center justify-start">
-                    <h4 className="text-2xl sm:text-3xl font-semibold  flex items-center gap-[10px] text-blue-600 ">{`${loggedInUser.first_name} ${loggedInUser.last_name}` || "- -"} </h4>
+            <div className="w-full h-[70px] flex items-center justify-between border-b border-slate-400  ">
+                <span className="flex-1 flex items-center justify-start ">
+                    <h4 className="text-2xl sm:text-3xl font-semibold  flex items-center gap-[10px] text-blue-600 whitespace-nowrap ">{`${loggedInUser.first_name} ${loggedInUser.last_name}` || "- -"} </h4>
                 </span>
 
                 {loggedInUser.user_role === 'admin' && 
-                <div className="relative  flex items-center justify-ed">
+                <div className="relative  flex items-center justify-end">
 
                     <button className="px-[20px] h-[45px] rounded-[3px] border border-amber-600 text-amber-600 flex items-center justify-center gap-2 " onClick={()=> setTrigger_notification(!trigger_notification)} >
                         <span className="h-[25px] w-[25px] sm:h-[22.5px] sm:w-[22.5px]  "> <IoIosNotificationsOutline size={'100%'} />  </span>
@@ -70,9 +70,9 @@ const Route_navigation = () => {
 
                 </div> }
 
-                {loggedInUser.user_role === 'user' && <div className="w-[400px]  h-full flex items-center justify-between">
+                {loggedInUser.user_role === 'user' && <div className="sm:w-[400px]  h-full flex items-center justify-between">
 
-                    {route_nav  !== 'my-loans' ?  <button className="px-[20px] h-[45px] rounded-[3px] bg-amber-700 hover:bg-amber-800 text-white text-sm " onClick={handle_new_loan}>New Loan</button> : <p> </p> }
+                    {route_nav  !== 'my-loans' ?  <button className="max-sm:hidden px-[20px] h-[45px] rounded-[3px] bg-amber-700 hover:bg-amber-800 text-white text-sm " onClick={handle_new_loan}>New Loan</button> : <p> </p> }
 
                     <button className="px-[20px] h-[45px] rounded-[3px] bg-blue-600 hover:bg-blue-700 text-white text-sm " onClick={handle_support}>Support</button>
                 </div>}

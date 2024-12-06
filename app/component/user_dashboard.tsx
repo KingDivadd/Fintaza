@@ -86,143 +86,139 @@ const User_Dashboard = () => {
     };
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <div className="w-full flex flex-col justify-start items-center ">
 
-                <div className="w-full flex items-start justify-start gap-10">
-                    {/* credit score */}
+                {/* section showing metrics */}
+                <div className="w-full flex flex-wrap items-center justify-between gap-[20px] sm:gap-10">
 
-                    <div className="flex items-center gap-[30px]  ">
-
-                        <span className="  flex flex-col justify-center items-center relative  ">
-                            <DoughnutChartOne  /> 
-                            <span className="w-[225px] h-[225px]  flex flex-col items-center justify-center absolute top-0 right-0 ">
-                                <p className="text-3xl font-bold text-teal-700">638</p>
-                                <p className="text-sm text-blue-600">Exuifax</p>
-                                <p className="text-sm ">Nov 16, 2024</p>
-                                
-                            </span>
-                        </span>
-
-                        <span className="  flex flex-col justify-center items-center relative  ">
-                            <DoughnutChartOne  /> 
-                            <span className="w-[225px] h-[225px]  flex flex-col items-center justify-center absolute top-0 right-0 ">
-                                <p className="text-3xl font-bold text-teal-600">632</p>
-                                <p className="text-sm text-blue-600">Experion</p>
-                                <p className="text-sm ">Nov 16, 2024</p>
-                                
-                            </span>
-                        </span>
-
-                        <span className="  flex flex-col justify-center items-center relative  ">
-                            <DoughnutChartOne  /> 
-                            <span className="w-[225px] h-[225px]  flex flex-col items-center justify-center absolute top-0 right-0 ">
-                                <p className="text-3xl font-bold text-teal-600">632</p>
-                                <p className="text-sm text-blue-600">TransUnion</p>
-                                <p className="text-sm ">Nov 16, 2024</p>
-                                
-                            </span>
-                        </span>
-                    </div>
-
-                    <div className="flex-1 h-[225px] shadow-lg flex flex-col items-start justify-start gap-5 p-[15px] rounded-[5px] border-t border-slate-200">
-                        <span className="flex items-center justify-start gap-2">
-                            <p className="text-md font-[500]  ">Total Loans Borrowed</p>
-                            <p className="text-lg font-[600] text-blue-600">$50,000</p>
-                        </span>
-                        <span className="flex items-center justify-start gap-2">
-                            <p className="text-md font-[500] ">Total Repaid</p>
-                            <p className="text-lg font-[600] text-teal-700">$7,600</p>
-                        </span>
-                        <span className="flex items-center justify-start gap-2">
-                            <p className="text-md font-[500] ">Active Loans</p>
-                            <p className="text-lg font-[600] text-blue-600">6</p>
-                        </span>
-                        <span className="flex items-center justify-start gap-2">
-                            <p className="text-md font-[500] ">Next Payment</p>
-                            <p className="text-lg font-[600] text-amber-600 ">$1,500 due on 25 Nov, 2024</p>
-                        </span>
-                    </div>
-
-
-                </div>
-                {/* section two loan info cards 1. loan id, 2. loan status, 3. loan repament date */}
-                <div className="mt-10 w-full flex items-start justify-start  overflow-auto ">
-                    <div className="w-full flex items-start jusitify-center gap-[30px] p-2 ">
-
-                        {[1,2,3].map((data, ind)=>{
-                            return(
-                                <div key={ind} className="w-[350px] relative flex flex-col justify-start min-h-[150px] rounded-[3px] shadow-lg p-[15px] gap-[20px]">
-                                    {ind % 2 == 1 ? <span className="w-full h-[7.5px] absolute top-0 left-0 rounded-t-[3px] bg-amber-600 "></span> :  <span className="w-full h-[7.5px] absolute top-0 left-0 rounded-t-[3px] bg-teal-600 "></span>}
-                                    <span className="w-full flex items-center justify-start gap-[5px] ">
-                                        <p className="text-md">Loan Status</p>
-                                        {ind % 2 == 1 ? <p className="text-md text-amber-600 font-[600]">Pending</p> : <p className="text-md text-teal-600 font-[600]">Approved</p>}
-                                    </span>
-
-                                    <span className="w-full flex items-center justify-start gap-[5px] ">
-                                        <p className="text-md">Repayment Due Date</p>
-                                        <p className="text-md font-[600]">20 Nov, 2024</p>
-                                    </span>
-
-                                    <span className="w-full flex items-center justify-start gap-[5px] ">
-                                        <p className="text-md">Outstanding Balance</p>
-                                        <p className="text-md font-[600]">$5,500</p>
-                                    </span>
-
-                                    <span className="w-full flex justify-between ">
-                                        <button className="px-5 rounded-[3px] border border-slate-700 hover:border-amber-600 text-slate-700 hover:text-amber-600 h-[45px] ">View Details</button>
-                                        <button className="px-5 rounded-[3px] border border-slate-700 hover:border-teal-700 text-slate-700 hover:text-teal-700 h-[45px] ">Make Payment</button>
-                                    </span>
-
-                                </div>
-                            )
-                        })   }
-                    </div>
-                </div>
-
-                {/* section three upcoming loan payment */}
-                <div className="mt-10 w-full flex flex-col items-start justify-start shadow-lg  rounded-[3px] border border-slate-200 ">
-                    <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300 ">
-                        <p className="text-md font-[600] ">Upcoming Loan Payment</p>
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+                        <p className="text-xl sm:text-2xl font-[600] text-teal-700">720</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-teal-700">Credit Score</p>
                     </span>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[20%] px-[15px] ">Loan Id</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px] ">Next Payment Date</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px] text-center ">Status</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px]">Amount to Pay</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px] text-end ">Action</p>
-                        </span>
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">5</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600">Total Loans Taken</p>
+                    </span>
 
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <p className="text-sm font-[500] w-[20%] px-[15px] ">BL1000200{ind + 1}</p>
-                                            <p className="text-sm font-[500] w-[20%] px-[15px] ">{7 + ind} November, 2024</p>
-                                            <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-center items-center ">
-                                                { ind % 2 == 1 ? <button className="h-[32.5px] w-[100px] rounded-[3px] font-[500] text-amber-600 ">Upcoming</button> :
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px] font-[500] text-red-600 ">Due</button>}
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">2</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-amber-600 ">Active Loans</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">$15,000</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-red-600 mx-auto w-[80%] ">Amount Owed</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">$10,000</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600   ">Amount Paid</p>
+
+                    </span>
+                </div>
+
+                {/* section two loan info cards 1. loan id, 2. loan status, 3. loan repament date */}
+                <div className="mt-10 w-full flex flex-col items-start justify-start shadow-lg rounded-[3px] border border-slate-200">
+                    <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300">
+                        <p className="text-md font-[600]">Loan Info</p>
+                    </span>
+
+                    {/* Wrapping content in overflow container */}
+                    <div className="w-full overflow-x-auto">
+                        <div className="min-w-[1154px] p-[15px] flex flex-col items-start justify-start mx-auto">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[20%] px-[15px]">Loan Id</p>
+                                <p className="text-sm font-[600] w-[20%] px-[15px]">Amount</p>
+                                <p className="text-sm font-[600] w-[20%] px-[15px]">Interest Rate</p>
+                                <p className="text-sm font-[600] w-[20%] px-[15px]">Status</p>
+                                <p className="text-sm font-[600] w-[20%] px-[15px]">Next Payment Date</p>
+                            </span>
+
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1, 2, 4, 5, 1, 1, 1, 1, 1, 1].map((data, ind) => {
+                                        return (
+                                            <span key={ind} className="table-body-row-1">
+                                                <p className="text-sm font-[500] w-[20%] px-[15px]">BL10005001</p>
+                                                <p className="text-sm font-[500] w-[20%] px-[15px]">$12,500</p>
+                                                <p className="text-sm font-[500] w-[20%] px-[15px]">Barack Obama</p>
+                                                <p className="text-sm font-[500] w-[20%] px-[15px] text-teal-700">$7,500</p>
+                                                <p className="text-sm font-[500] w-[20%] px-[15px]">{9 + ind} Nov, 2024</p>
                                             </span>
-                                            <p className="text-sm font-[500] w-[20%] px-[15px] ">$7,500</p>
-                                            <span className="text-sm font-[500] w-[20%] px-[15px] flex justify-end">
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-teal-700 hover:bg-teal-800">Pay Now</button>
-                                            </span>
-                                        </span>
-                                    )
-                                })}
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">
+                    <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px]">
                         <span className="flex flex-row items-center justify-start gap-3 h-full">
                             <p className="text-md cursor-pointer" onClick={() => app_users_action('prev')}>Prev</p>
                             <span className="w-auto h-full flex flex-row items-center justify-start">
-                            {render_page_numbers()}
+                                {render_page_numbers()}
+                            </span>
+                            <p className="text-md cursor-pointer" onClick={() => app_users_action('next')}>Next</p>
+                        </span>
+                        <span className="flex flex-row items-center justify-end gap-3 h-full">
+                            <p className="text-md">Showing 1-15 of {(filtered_lead_box && filtered_lead_box.leads.length) || 0}</p>
+                        </span>
+                    </span>
+                </div>
+
+                {/* Upcoming payments */}
+                <div className="mt-10 w-full flex flex-col items-start justify-start shadow-lg rounded-[3px] border border-slate-200">
+                    <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300">
+                        <p className="text-md font-[600]">Upcoming Payments</p>
+                    </span>
+
+                    {/* Wrapping content in overflow container */}
+                    <div className="w-full overflow-x-auto">
+                        <div className="min-w-[1154px] p-[15px] flex flex-col items-start justify-start mx-auto">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[17%] px-[15px]">Loan Id</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px]">Total Amount</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px]">Paid Amount</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px]">Amount Due</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px]">Due Date</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px]">Action</p>
+                            </span>
+
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1, 2, 4, 5, 1, 1, 1, 1, 1, 1].map((data, ind) => {
+                                        return (
+                                            <span key={ind} className="table-body-row-1">
+                                                <p className="text-sm font-[500] w-[17%] px-[15px]">BL10005001</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px]">$12,500</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px]">$12,500</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px]">$12,500</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px]">{9 + ind} Nov, 2024</p>
+                                                <span className="w-[15%] px-[15px] ">
+                                                    <button className="h-[30px] rounded-[2.5px] bg-blue-600 hover:bg-blue-700 text-white px-5 text-sm ">
+                                                        Pay Now
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px]">
+                        <span className="flex flex-row items-center justify-start gap-3 h-full">
+                            <p className="text-md cursor-pointer" onClick={() => app_users_action('prev')}>Prev</p>
+                            <span className="w-auto h-full flex flex-row items-center justify-start">
+                                {render_page_numbers()}
                             </span>
                             <p className="text-md cursor-pointer" onClick={() => app_users_action('next')}>Next</p>
                         </span>
@@ -237,41 +233,43 @@ const User_Dashboard = () => {
                     <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300 ">
                         <p className="text-md font-[600] ">Recent Transactions</p>
                     </span>
+                                
+                    <div className="w-full overflow-x-auto">
+                        <div className="min-w-[1350px] p-[15px] flex flex-col items-start justify-start mx-auto ">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Date</p>
+                                <p className="text-sm font-[600] w-[25%] px-[15px] ">Account Number</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Type (Cr/Dr)</p>
+                                <p className="text-sm font-[600] w-[20%] px-[15px] ">Subject</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Details</p>
+                            </span>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Date</p>
-                            <p className="text-sm font-[600] w-[25%] px-[15px] ">Account Number</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Amount</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Type (Cr/Dr)</p>
-                            <p className="text-sm font-[600] w-[20%] px-[15px] ">Subject</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Details</p>
-                        </span>
-
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] ">{7 + ind} Nov, 2024</p>
-                                            <p className="text-sm font-[500] w-[25%] px-[15px] ">SU10005001 - Savings Account (USD)</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700 ">$7,500</p>
-                                            <p className="text-sm font-[500] w-[10%] px-[15px] ">Credit</p>
-                                            <p className="text-sm font-[500] w-[20%] px-[15px] ">Account Maintenanc Fee</p>
-                                            <span className="text-sm font-[500] w-[10%] px-[15px] flex justify-center items-center ">
-                                                { ind % 2 == 1 ? <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-amber-600 ">Pending</button> :
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  text-white bg-teal-700 ">Completed</button>}
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
+                                        return(
+                                            <span key={ind} className="table-body-row-1  ">
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] ">{7 + ind} Nov, 2024</p>
+                                                <p className="text-sm font-[500] w-[25%] px-[15px] ">SU10005001 - Savings Account (USD)</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700 ">$7,500</p>
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] ">Credit</p>
+                                                <p className="text-sm font-[500] w-[20%] px-[15px] ">Account Maintenanc Fee</p>
+                                                <span className="text-sm font-[500] w-[10%] px-[15px] flex justify-start items-center ">
+                                                    { ind % 2 == 1 ? <p className="  text-start text-amber-600 ">Pending</p> :
+                                                    <p className="  text-start text-teal-700 ">Completed</p>}
+                                                </span>
+                                                <span className="text-sm font-[500] w-[10%] px-[15px] flex justify-end">
+                                                    <button className="h-[32.5px] w-[100px] rounded-[3px]  border border-slate-500 hover:border-blue-600 text-black hover:text-blue-600">view</button>
+                                                </span>
                                             </span>
-                                            <span className="text-sm font-[500] w-[10%] px-[15px] flex justify-end">
-                                                <button className="h-[32.5px] w-[100px] rounded-[3px]  border border-slate-500 hover:border-blue-600 text-black hover:text-blue-600">view</button>
-                                            </span>
-                                        </span>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">
