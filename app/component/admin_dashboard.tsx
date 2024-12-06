@@ -90,40 +90,40 @@ const Admin_dashboard = () => {
 
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 '  >
             <div className="w-full flex flex-col justify-start items-center ">
 
                 {/* section one metrics card */}
-                <div className="w-full flex flex-wrap justify-between gap-10">
-                    <div className="w-[185px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-between gap-5 border border-slate-200">
-                            <p className="text-2xl font-[600] text-blue-600">1,250</p>
-                            <p className="text-lg font-[500] text-blue-600 ">Total Loans </p>
+                <div className="w-full flex flex-wrap justify-between gap-[20px] sm:gap-10">
+                    <div className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200">
+                            <p className="text-xl sm:text-2xl font-[600] text-blue-600">1,250</p>
+                            <p className="text-md sm:text-lg font-[500] text-center text-blue-600 max-sm:w-[60%] ">Total Loans </p>
                     </div>
                     
-                    <div className="w-[185px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-between gap-5 border border-slate-200">
-                            <p className="text-2xl font-[600] text-teal-700">1,250</p>
-                            <p className="text-lg font-[500] text-teal-700 ">Active Loans </p>
+                    <div className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200">
+                            <p className="text-xl sm:text-2xl font-[600] text-teal-700">1,250</p>
+                            <p className="text-md sm:text-lg font-[500] text-center text-teal-700 ">Active Loans </p>
                     </div>
                     
-                    <div className="w-[185px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-between gap-5 border border-slate-200">
-                            <p className="text-2xl font-[600] text-amber-600">55</p>
-                            <p className="text-lg font-[500] text-center text-amber-600 ">Pending Approval </p>
+                    <div className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200">
+                            <p className="text-xl sm:text-2xl font-[600] text-amber-600">55</p>
+                            <p className="text-md sm:text-lg font-[500] text-center text-center text-amber-600 ">Pending Approval </p>
                     </div>
                     
-                    <div className="w-[185px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-between gap-5 border border-slate-200">
-                            <p className="text-2xl font-[600] text-blue-600">$1,350,000</p>
-                            <p className="text-lg font-[500] text-center text-blue-600 ">Amount Disbursed </p>
+                    <div className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200">
+                            <p className="text-xl sm:text-2xl font-[600] text-blue-600">$1,350,000</p>
+                            <p className="text-md sm:text-lg font-[500] text-center text-center text-blue-600 ">Amount Disbursed </p>
                     </div>
                     
-                    <div className="w-[185px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-between gap-5 border border-slate-200">
-                            <p className="text-2xl font-[600] text-red-600">120</p>
-                            <p className="text-lg font-[500] text-center text-red-600">Overdue Loans </p>
+                    <div className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200">
+                            <p className="text-xl sm:text-2xl font-[600] text-red-600">120</p>
+                            <p className="text-md sm:text-lg font-[500] text-center text-center text-red-600">Overdue Loans </p>
                     </div>
                     
                     
-                    <div className="w-[185px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-between gap-5 border border-slate-200">
-                            <p className="text-2xl font-[600] text-red-600">$850,000</p>
-                            <p className="text-lg font-[500] text-center text-red-600 ">Outstanding Amount </p>
+                    <div className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200">
+                            <p className="text-xl sm:text-2xl font-[600] text-red-600">$850,000</p>
+                            <p className="text-md sm:text-lg font-[500] text-center text-center text-red-600 ">Outstanding Amount </p>
                     </div>
                     
                 </div>

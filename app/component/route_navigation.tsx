@@ -4,6 +4,8 @@ import {useRouter} from 'next/navigation'
 import { get_auth_request } from '../api';
 import { useChat } from '../context/ChatContext';
 import { endianness } from 'os';
+import { IoIosNotificationsOutline } from "react-icons/io"
+
 
 interface NavProps {
     nav: string;
@@ -47,17 +49,20 @@ const Route_navigation = () => {
     }
 
     return (
-        <div className="w-full  px-[75px] flex flex-col justify-center items-center justify-center border-b border-slate-300 shadow-md ">
+        <div className="w-full  px-[20px] md:px-[55px] lg:px-[75px]  flex flex-col justify-center items-center justify-center border-b border-slate-200 shadow-md ">
             {close_welcome_nav && <span className="w-full border-b border-slate-400 mx-auto"></span>}
             <div className="w-full h-[70px] flex items-center justify-between border-b border-slate-400">
                 <span className="flex-1 flex items-center justify-start">
-                    <h4 className="text-3xl font-semibold  flex items-center gap-[10px] text-blue-600 ">{`${loggedInUser.first_name} ${loggedInUser.last_name}` || "- -"} </h4>
+                    <h4 className="text-2xl sm:text-3xl font-semibold  flex items-center gap-[10px] text-blue-600 ">{`${loggedInUser.first_name} ${loggedInUser.last_name}` || "- -"} </h4>
                 </span>
 
                 {loggedInUser.user_role === 'admin' && 
                 <div className="relative  flex items-center justify-ed">
 
-                    <button className="px-[20px] h-[45px] rounded-[3px] bg-amber-600 hover:bg-amber-800 text-white text-sm " onClick={()=> setTrigger_notification(!trigger_notification)} >notifications</button>
+                    <button className="px-[20px] h-[45px] rounded-[3px] border border-amber-600 text-amber-600 flex items-center justify-center gap-2 " onClick={()=> setTrigger_notification(!trigger_notification)} >
+                        <span className="h-[25px] w-[25px] sm:h-[22.5px] sm:w-[22.5px]  "> <IoIosNotificationsOutline size={'100%'} />  </span>
+                        <p className="max-sm:hidden text-md">Notifications</p>
+                    </button>
 
                     {trigger_notification && <div className="absolute z-20 top-[50px] w-[400px] h-[360px] right-0 rounded-[5px] shadow-md border border-slate-200 bg-white flex items-center justify-center ">
                         no new notification

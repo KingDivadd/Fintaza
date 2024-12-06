@@ -17,7 +17,7 @@ const Signup = () => {
     const {loggedInUser, setLoggedInUser} = useChat()
     const [auth, setAuth] = useState({
         email: '', password: '', first_name: '', last_name: '', business_name: '', 
-        code: '', phone: '', city: '', state: '', zip: '', address: '',
+        code: '', phone: '', city: '', state: '', zip: '', address: '', user_role: 'user'
     })
     const [inputError, setInputError] = useState({
         email: false, password: false, first_name: false, last_name: false, business_name: false, 
@@ -94,7 +94,7 @@ const Signup = () => {
 
             try {
                 
-                const response = await post_auth_request('app/add-user', auth)                
+                const response = await post_request('app/signup', auth)                
 
                 console.log('response result === ', response)
 
@@ -103,11 +103,11 @@ const Signup = () => {
                     localStorage.setItem('x-id-key' ,response.headers.get('x-id-key'));
 
                     setAuth({email: '', password: '', first_name: '', last_name: '', business_name: '', 
-                        code: '', phone: '', city: '', state: '', zip: '', address: '',})
+                        code: '', phone: '', city: '', state: '', zip: '', address: '', user_role: 'user'})
 
-                        // setTimeout(() => {
-                        //     router.push('/user/porter')
-                        // }, 1000);
+                        setTimeout(() => {
+                            router.push('/user/porter')
+                        }, 1000);
                     
                     showAlert(response.data.msg, "success")
                     setLoading(false)
