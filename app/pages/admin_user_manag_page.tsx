@@ -214,7 +214,7 @@ const User_management_page = () => {
     }
 
     return (
-        <div className='relative w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <span className="px-[20px] flex items-center justify-end absolute top-[15px] right-[50px] z-20 h-[50px]  ">
 
                 {alert.message && <Alert message={alert.message} type={alert.type} />} 
@@ -226,24 +226,24 @@ const User_management_page = () => {
 
                 <div className="w-full flex items-center justify-between">
 
-                    <div className="w-full flex  items-center justify-start gap-10">
+                    <div className="w-full flex  items-center justify-start gap-5 sm:gap-10">
 
-                        <span className="flex items-center jusitify-center gap-5">
+                        <span className="flex items-center jusitify-center gap-3 sm:gap-5">
 
-                            <p className="text-md text-blue-600 text-center">All Users</p>
-                            <p className="text-2xl font-[600] text-blue-600">{!loading ? user_box?.users.length : '--'}</p>
+                            <p className="text-sm sm:text-md text-blue-600 text-center">All Users</p>
+                            <p className="text-xl sm:text-2xl font-[600] text-blue-600">{!loading ? user_box?.users.length : '--'}</p>
 
                         </span>
-                        <span className="flex items-center jusitify-center gap-5">
+                        <span className="flex items-center jusitify-center gap-3 sm:gap-5">
 
-                            <p className="text-md text-red-600 text-center">Inactive Users</p>
-                            <p className="text-2xl font-[600] text-red-600">{ !loading ? user_box?.users.filter((data:any) => !data.is_active).length : '--' }</p>
+                            <p className="text-sm sm:text-md text-red-600 text-center">Inactive Users</p>
+                            <p className="text-xl sm:text-2xl font-[600] text-red-600">{ !loading ? user_box?.users.filter((data:any) => !data.is_active).length : '--' }</p>
 
                         </span>
 
                     </div>
 
-                    <button className="px-5 whitespace-nowrap h-[45px] rounded-[3px] text-white bg-blue-600 hover:bg-blue-700" onClick={handle_new_user} >Add User</button>
+                    <button className="px-3 sm:px-5 text-sm whitespace-nowrap h-[45px] rounded-[3px] text-white bg-blue-600 hover:bg-blue-700" onClick={handle_new_user} >Add User</button>
                 </div>
 
 
@@ -253,10 +253,10 @@ const User_management_page = () => {
                         <p className="text-md font-[600] ">All Users</p>
                     </span>
                     
-                    <div className="w-full flex items-center justify-between p-[15px] pb-0 ">
+                    <div className="w-full flex items-center justify-between p-[15px] pb-0 gap-5">
 
                         <span className="flex items-center gap-5">
-                            <p className="text-sm">Showing</p>
+                            <p className="text-sm max-sm:hidden">Showing</p>
                             <div className="w-[100px] relative flex flex-col items-start justify-start z-10">
                                 <span className="h-[45px] w-full border border-slate-400 rounded-[3px] flex items-center justify-between px-[15px] " onClick={()=> setDrop_list_no(!drop_list_no)} > 
                                     {list_number == 0 ? "All": list_number }
@@ -276,58 +276,61 @@ const User_management_page = () => {
                         </span>
 
                         <span className="w-[250px] ">
-                            <input type="text" placeholder='search' onChange={handle_filter} className='input-type-1 ' />
+                            <input type="text" placeholder='Search...' onChange={handle_filter} className='input-type-1 ' />
                         </span>
 
                     </div>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[17.5%] px-[15px] ">Last Updated</p>
-                            <p className="text-sm font-[600] w-[18.5%] px-[15px] ">Full Name</p>
-                            <p className="text-sm font-[600] w-[22%] px-[15px] ">Email</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Role</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
-                            <p className="text-sm font-[600] w-[22%] px-[15px] ">Action</p>
-                        </span>
+                    <div className="w-full overflow-x-auto">
 
-                        {loading ? 
-                        
-                        <div className="w-full h-[500px] flex items-center justify-center">
-                            <Loading />
-                        </div>
-                        :
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {filtered_user_box?.users.map((data: any, ind: number)=>{
-                                    const {user_id, first_name, last_name, email, user_role, created_at, updated_at,is_active } = data
+                        <div className="w-full min-w-[1300px] p-[15px] flex flex-col items-start justify-start mx-auto">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[17.5%] px-[15px] ">Last Updated</p>
+                                <p className="text-sm font-[600] w-[18.5%] px-[15px] ">Full Name</p>
+                                <p className="text-sm font-[600] w-[22%] px-[15px] ">Email</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Role</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
+                                <p className="text-sm font-[600] w-[22%] px-[15px] ">Action</p>
+                            </span>
 
-                                    const formattedTime = moment(Number(updated_at)).calendar();
-                                    return(
-                                        <span key={ind} className="h-[60px] table-body-row-1  " >
-                                            {/* <p className="text-sm font-[500] w-[15%] px-[15px] ">{readable_date(Number(updated_at) / 1000)}</p> */}
-                                            <p className="text-sm font-[500] w-[17.5%] px-[15px] ">{formattedTime}</p>
-                                            <div className="text-sm font-[500] w-[18.5%] px-[15px] flex items-center justify-start gap-[20px]">
-                                                <SmallAvatar user={data} isActive={is_active} toggleActive={toggleActive} />
-                                                {first_name} {last_name}
-                                            </div>
-                                            <p className="text-sm font-[500] w-[22%] px-[15px] flex-wrap text-start">{email}</p>
-                                            <p className={user_role == 'admin' ? "text-sm font-[500] w-[10%] px-[15px] text-lime-700": "text-sm font-[500] w-[10%] px-[15px] text-blue-600 "}>{user_role == 'admin' ? 'Admin' : 'Customer'}</p>
-                                            <span className=" w-[10%] px-[15px] flex items-center justify-start " >
-                                                {is_active ? <p className="text-sm text-lime-700 font-[500]  ">Active</p> : <p className="text-sm text-red-600 font-[500]  ">Suspended</p>}
-                                            </span>
-                                            <span className=" w-[22%] px-[15px] flex items-center justify-start gap-[15px]" >
-                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-teal-700 hover:bg-teal-800" onClick={()=> handle_view(data)}>view</button>
-                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-amber-600 hover:bg-amber-700" onClick={()=> handle_edit(data)}>edit</button>
-                                                <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-red-600 hover:bg-red-700">delete</button>
-                                            </span>
-                                            
-                                        </span>
-                                    )
-                                })}
+                            {loading ? 
+                            
+                            <div className="w-full h-[500px] flex items-center justify-center">
+                                <Loading />
                             </div>
-                        </div>}
+                            :
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {filtered_user_box?.users.map((data: any, ind: number)=>{
+                                        const {user_id, first_name, last_name, email, user_role, created_at, updated_at,is_active } = data
 
+                                        const formattedTime = moment(Number(updated_at)).calendar();
+                                        return(
+                                            <span key={ind} className="h-[60px] table-body-row-1  " >
+                                                {/* <p className="text-sm font-[500] w-[15%] px-[15px] ">{readable_date(Number(updated_at) / 1000)}</p> */}
+                                                <p className="text-sm font-[500] w-[17.5%] px-[15px] ">{formattedTime}</p>
+                                                <div className="text-sm font-[500] w-[18.5%] px-[15px] flex items-center justify-start gap-[20px]">
+                                                    <SmallAvatar user={data} isActive={is_active} toggleActive={toggleActive} />
+                                                    {first_name} {last_name}
+                                                </div>
+                                                <p className="text-sm font-[500] w-[22%] px-[15px] flex-wrap text-start">{email}</p>
+                                                <p className={user_role == 'admin' ? "text-sm font-[500] w-[10%] px-[15px] text-lime-700": "text-sm font-[500] w-[10%] px-[15px] text-blue-600 "}>{user_role == 'admin' ? 'Admin' : 'Customer'}</p>
+                                                <span className=" w-[10%] px-[15px] flex items-center justify-start " >
+                                                    {is_active ? <p className="text-sm text-lime-700 font-[500]  ">Active</p> : <p className="text-sm text-red-600 font-[500]  ">Suspended</p>}
+                                                </span>
+                                                <span className=" w-[22%] px-[15px] flex items-center justify-start gap-[15px]" >
+                                                    <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-teal-700 hover:bg-teal-800" onClick={()=> handle_view(data)}>view</button>
+                                                    <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-amber-600 hover:bg-amber-700" onClick={()=> handle_edit(data)}>edit</button>
+                                                    <button className="px-[15px] h-[27.5px] text-sm rounded-[2.5px] text-white bg-red-600 hover:bg-red-700">delete</button>
+                                                </span>
+                                                
+                                            </span>
+                                        )
+                                    })}
+                                </div>
+                            </div>}
+
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">

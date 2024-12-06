@@ -139,7 +139,7 @@ const Admin_dashboard = () => {
                     {/* Table container with horizontal scrolling */}
                     <div className="w-full overflow-x-auto">
                         <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto">
-                            <span className="w-full min-w-[1024px] h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                            <span className="w-full min-w-[1154px] h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
                                 <p className="text-sm font-[600] w-[15%] px-[15px]">Date</p>
                                 <p className="text-sm font-[600] w-[15%] px-[15px]">Loan Id</p>
                                 <p className="text-sm font-[600] w-[20%] px-[15px]">Borrower Name</p>
@@ -148,7 +148,7 @@ const Admin_dashboard = () => {
                                 <p className="text-sm font-[600] w-[20%] px-[15px]">Action</p>
                             </span>
 
-                            <div className="w-full min-w-[1024px] h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                            <div className="w-full min-w-[1154px] h-[500px] flex flex-col items-start justify-start overflow-y-auto">
                                 <div className="w-full h-full flex flex-col justify-start">
                                     {[1, 2, 4, 5, 1, 1, 1, 1, 1, 1].map((data, ind) => {
                                         return (
@@ -206,61 +206,61 @@ const Admin_dashboard = () => {
 
                 
                 <div className="mt-10 w-full flex flex-col items-start justify-start shadow-lg rounded-[3px] border border-slate-200">
-                    <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300">
-                        <p className="text-md font-[600]">Payment Overview</p>
-                    </span>
+                <span className="h-[50px] w-full flex items-center justify-start px-[15px] border-b border-slate-300">
+                    <p className="text-md font-[600]">Payment Overview</p>
+                </span>
 
-                    {/* Wrapping content in overflow container */}
-                    <div className="w-full overflow-x-auto">
-                        <div className="min-w-[1024px] p-[15px] flex flex-col items-start justify-start mx-auto">
-                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                                <p className="text-sm font-[600] w-[15%] px-[15px]">Date</p>
-                                <p className="text-sm font-[600] w-[15%] px-[15px]">Loan Id</p>
-                                <p className="text-sm font-[600] w-[15%] px-[15px]">Payment Id</p>
-                                <p className="text-sm font-[600] w-[20%] px-[15px]">Borrower Name</p>
-                                <p className="text-sm font-[600] w-[10%] px-[15px]">Amount Paid</p>
-                                <p className="text-sm font-[600] w-[15%] px-[15px]">Due Date</p>
-                                <p className="text-sm font-[600] w-[10%] px-[15px]">Status</p>
-                            </span>
+                {/* Wrapping content in overflow container */}
+                <div className="w-full overflow-x-auto">
+                    <div className="min-w-[1154px] p-[15px] flex flex-col items-start justify-start mx-auto">
+                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                            <p className="text-sm font-[600] w-[15%] px-[15px]">Date</p>
+                            <p className="text-sm font-[600] w-[15%] px-[15px]">Loan Id</p>
+                            <p className="text-sm font-[600] w-[15%] px-[15px]">Payment Id</p>
+                            <p className="text-sm font-[600] w-[18%] px-[15px]">Borrower Name</p>
+                            <p className="text-sm font-[600] w-[12%] px-[15px]">Amount Paid</p>
+                            <p className="text-sm font-[600] w-[15%] px-[15px]">Due Date</p>
+                            <p className="text-sm font-[600] w-[10%] px-[15px]">Status</p>
+                        </span>
 
-                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                                <div className="w-full h-full flex flex-col justify-start">
-                                    {[1, 2, 4, 5, 1, 1, 1, 1, 1, 1].map((data, ind) => {
-                                        return (
-                                            <span key={ind} className="table-body-row-1">
-                                                <p className="text-sm font-[500] w-[15%] px-[15px]">{9 + ind} Nov, 2024</p>
-                                                <p className="text-sm font-[500] w-[15%] px-[15px]">BL10005001</p>
-                                                <p className="text-sm font-[500] w-[15%] px-[15px]">PL10005001</p>
-                                                <p className="text-sm font-[500] w-[20%] px-[15px]">Barack Obama</p>
-                                                <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700">$7,500</p>
-                                                <p className="text-sm font-[500] w-[15%] px-[15px]">{9 + ind} Nov, 2024</p>
+                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                            <div className="w-full h-full flex flex-col justify-start">
+                                {[1, 2, 4, 5, 1, 1, 1, 1, 1, 1].map((data, ind) => {
+                                    return (
+                                        <span key={ind} className="table-body-row-1">
+                                            <p className="text-sm font-[500] w-[15%] px-[15px]">{9 + ind} Nov, 2024</p>
+                                            <p className="text-sm font-[500] w-[15%] px-[15px]">BL10005001</p>
+                                            <p className="text-sm font-[500] w-[15%] px-[15px]">PL10005001</p>
+                                            <p className="text-sm font-[500] w-[18%] px-[15px]">Barack Obama</p>
+                                            <p className="text-sm font-[500] w-[12%] px-[15px] text-teal-700">$7,500</p>
+                                            <p className="text-sm font-[500] w-[15%] px-[15px]">{9 + ind} Nov, 2024</p>
 
-                                                {ind % 2 == 1 ? (
-                                                    <p className="text-sm font-[500] w-[10%] px-[15px] text-amber-600">Pending</p>
-                                                ) : (
-                                                    <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700">Approved</p>
-                                                )}
-                                            </span>
-                                        );
-                                    })}
-                                </div>
+                                            {ind % 2 == 1 ? (
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] text-amber-600">Pending</p>
+                                            ) : (
+                                                <p className="text-sm font-[500] w-[10%] px-[15px] text-teal-700">Approved</p>
+                                            )}
+                                        </span>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
-
-                    <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px]">
-                        <span className="flex flex-row items-center justify-start gap-3 h-full">
-                            <p className="text-md cursor-pointer" onClick={() => app_users_action('prev')}>Prev</p>
-                            <span className="w-auto h-full flex flex-row items-center justify-start">
-                                {render_page_numbers()}
-                            </span>
-                            <p className="text-md cursor-pointer" onClick={() => app_users_action('next')}>Next</p>
-                        </span>
-                        <span className="flex flex-row items-center justify-end gap-3 h-full">
-                            <p className="text-md">Showing 1-15 of {(filtered_lead_box && filtered_lead_box.leads.length) || 0}</p>
-                        </span>
-                    </span>
                 </div>
+
+                <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px]">
+                    <span className="flex flex-row items-center justify-start gap-3 h-full">
+                        <p className="text-md cursor-pointer" onClick={() => app_users_action('prev')}>Prev</p>
+                        <span className="w-auto h-full flex flex-row items-center justify-start">
+                            {render_page_numbers()}
+                        </span>
+                        <p className="text-md cursor-pointer" onClick={() => app_users_action('next')}>Next</p>
+                    </span>
+                    <span className="flex flex-row items-center justify-end gap-3 h-full">
+                        <p className="text-md">Showing 1-15 of {(filtered_lead_box && filtered_lead_box.leads.length) || 0}</p>
+                    </span>
+                </span>
+            </div>
                 
 
 
