@@ -193,6 +193,10 @@ const Login = () => {
                         ) : 'login'}
                     </button>
 
+                    <span className="text-sm flex items-center justify-center gap-[5px] mx-auto">
+                        Don't have account? <p className="text-sm text-blue-600 hover:underline" onClick={()=> router.push('/auth/signup')}>Signup</p> 
+                    </span>
+
                     <span className="w-full flex items-center justify-end">
                         <p className="text-sm font-[500] text-slate-700 cursor-pointer hover:text-blue-600 hover:underline " onClick={()=> router.push('/auth/recover-password')} >Forget Password?</p>
                     </span>
