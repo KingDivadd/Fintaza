@@ -100,32 +100,32 @@ const DocumentPage = () => {
     }
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <div className="w-full flex flex-col justify-start items-center gap-10">
 
                 {/* section showing metrics */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-10">
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-blue-600">1,500</p>
-                        <p className="text-md text-center text-blue-600">Total Documents</p>
+                <div className="w-full flex flex-wrap items-center justify-between gap-[20px] sm:gap-10">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">1,500</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600">Total Documents</p>
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-amber-600">120</p>
-                        <p className="text-md text-center text-amber-600">Pending Approvals</p>
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">120</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-amber-600">Pending Approvals</p>
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-teal-600">1300</p>
-                        <p className="text-md text-center text-teal-600 ">Approved Docuements</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-teal-600">1300</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-teal-600 ">Approved Docuements</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-red-600">80</p>
-                        <p className="text-md text-center text-red-600 mx-auto ">Rejected Documents</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">80</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-red-600 mx-auto ">Rejected Documents</p>
 
                     </span>
 
@@ -148,40 +148,43 @@ const DocumentPage = () => {
 
                     </span>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Id</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Name</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Uploaded By</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Upload Date</p>
-                            <p className="text-sm font-[600] w-[17%] px-[15px] ">Status</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Action</p>
-                        </span>
+                    <div className="w-full overflow-y-auto">
 
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <span className="w-[17%] px-[15px]  ">
-                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >DC1000207{ind}</p>
+                        <div className="min-w-[1350px] p-[15px] flex flex-col items-start justify-start mx-auto ">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Id</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px] ">Document Name</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px] ">Uploaded By</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px] ">Upload Date</p>
+                                <p className="text-sm font-[600] w-[17%] px-[15px] ">Status</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Action</p>
+                            </span>
+
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
+                                        return(
+                                            <span key={ind} className="table-body-row-1  ">
+                                                <span className="w-[17%] px-[15px]  ">
+                                                    <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >DC1000207{ind}</p>
+                                                </span>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">ID_Verification.pdf</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Ibrahim Babangida</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">27 November, 2024</p>
+                                                <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Pending</p>  {/* pending approved rejected */}
+                                                <span className="w-[15%] px-[15px] flex items-center justify-start ">
+                                                    <button className="h-[27.5px] px-5 rounded-[2.5px] bg-teal-700 text-white " onClick={()=> handle_view(data)}>
+                                                        view
+                                                    </button>
+                                                </span>
+                                                
                                             </span>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">ID_Verification.pdf</p>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Ibrahim Babangida</p>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">27 November, 2024</p>
-                                            <p className="text-sm font-[500] w-[17%] px-[15px] text-slate-600">Pending</p>  {/* pending approved rejected */}
-                                            <span className="w-[15%] px-[15px] flex items-center justify-start ">
-                                                <button className="h-[27.5px] px-5 rounded-[2.5px] bg-teal-700 text-white " onClick={()=> handle_view(data)}>
-                                                    view
-                                                </button>
-                                            </span>
-                                            
-                                        </span>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">

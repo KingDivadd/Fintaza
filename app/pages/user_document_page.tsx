@@ -96,7 +96,7 @@ const User_document_page = () => {
     }
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <div className="w-full flex flex-col justify-start items-center gap-10">
 
                 

@@ -109,7 +109,7 @@ const Admin_support_page = () => {
 
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 relative'  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative'  >
             <span className="px-[20px] flex items-center justify-end absolute top-[15px] right-[50px] z-20 h-[50px]  ">
 
             {alert.message && <Alert message={alert.message} type={alert.type} />} 
@@ -117,35 +117,35 @@ const Admin_support_page = () => {
             <div className="w-full flex flex-col justify-start items-center gap-10">                
 
                 {/* Metrics */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-10">
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-blue-600">1,00</p>
-                        <p className="text-md text-center text-blue-600">Total Tickets</p>
+                <div className="w-full flex flex-wrap items-center justify-between gap-[20px] sm:gap-10">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">1,00</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600">Total Tickets</p>
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-red-600">320</p>
-                        <p className="text-md text-center text-red-600">Open Tickets</p>
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">320</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-red-600">Open Tickets</p>
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-amber-600">150</p>
-                        <p className="text-md text-center text-amber-600 ">Tickets In Progress</p>
-
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-blue-600">650</p>
-                        <p className="text-md text-center text-blue-600 mx-auto w-[80%] ">Resolved Tickets</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">150</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-amber-600 ">Tickets In Progress</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
 
-                        <p className="text-3xl font-[600] text-teal-700">80</p>
-                        <p className="text-md text-center text-teal-700  mx-auto w-[60%] ">Closed Tickets</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">650</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600 mx-auto w-[80%] ">Resolved Tickets</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200  ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-teal-700">80</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-teal-700  mx-auto w-[60%] ">Closed Tickets</p>
 
                     </span>
                 </div>
@@ -159,51 +159,55 @@ const Admin_support_page = () => {
                     
                     <div className="w-full flex items-center justify-between gap-5 px-[15px] pt-[15px]">
                         <div className="w-full flex items-center justify-start gap-5">
-                            <span className="w-[250px] "><input type="text" placeholder='search...' className="input-type-1" /> </span>
-                            <span className="h-[45px] w-[200px] "><Dropdown options={['Open', 'In Progress', 'Resolved', 'Closed']} id='status' placeholder='Status' onSelect={handle_select} /> </span>
-                            <span className="h-[45px] w-[200px] "><Dropdown options={['High', 'Medium', 'Low']} id='priority' placeholder='Priority' onSelect={handle_select} /> </span>
+                            <span className="sm:w-[250px] "><input type="text" placeholder='search...' className="input-type-1" /> </span>
+
+                            <span className="max-sm:hidden h-[45px] w-[200px] "><Dropdown options={['Open', 'In Progress', 'Resolved', 'Closed']} id='status' placeholder='Status' onSelect={handle_select} /> </span>
+
+                            <span className="max-sm:hidden h-[45px] w-[200px] "><Dropdown options={['High', 'Medium', 'Low']} id='priority' placeholder='Priority' onSelect={handle_select} /> </span>
                         </div>
 
                         <button className="h-[45px] bg-blue-600 hover:bg-blue-700 text-white rounded-[3px] px-5 whitespace-nowrap ">Create Ticket</button>
                     </div>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Ticket ID</p>
-                            <p className="text-sm font-[600] w-[12.5%] px-[15px] ">User Name</p>
-                            <p className="text-sm font-[600] w-[17.5%] px-[15px] ">Subject</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Date Submitted</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Priority</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Assigned To</p>
-                            <p className="text-sm font-[600] w-[10%] px-[15px] ">Action</p>
-                        </span>
+                    <div className="w-full overflow-y-auto ">
+                        <div className="min-w-[1400px] p-[15px] flex flex-col items-start justify-start mx-auto ">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Ticket ID</p>
+                                <p className="text-sm font-[600] w-[12.5%] px-[15px] ">User Name</p>
+                                <p className="text-sm font-[600] w-[17.5%] px-[15px] ">Subject</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Date Submitted</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Priority</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Status</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Assigned To</p>
+                                <p className="text-sm font-[600] w-[10%] px-[15px] ">Action</p>
+                            </span>
 
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <span className="w-[10%] px-[15px] ">
-                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >TC1000207{ind}</p>
-                                            </span>
-                                            <p className="text-sm font-[500] text-slate-600 w-[12.5%] px-[15px] ">Ibrahim Babangida</p>
-                                            <p className="text-sm font-[500] text-slate-600 w-[17.5%] px-[15px] ">Document Upload Bug</p>
-                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">20 November, 2024</p>
-                                            <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">Medium</p>
-                                            <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">In Progress</p>
-                                            <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">David Iroegbu</p>
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
+                                        return(
+                                            <span key={ind} className="table-body-row-1  ">
+                                                <span className="w-[10%] px-[15px] ">
+                                                    <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >TC1000207{ind}</p>
+                                                </span>
+                                                <p className="text-sm font-[500] text-slate-600 w-[12.5%] px-[15px] ">Ibrahim Babangida</p>
+                                                <p className="text-sm font-[500] text-slate-600 w-[17.5%] px-[15px] ">Document Upload Bug</p>
+                                                <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">20 November, 2024</p>
+                                                <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">Medium</p>
+                                                <p className="text-sm font-[500] text-slate-600 w-[10%] px-[15px] ">In Progress</p>
+                                                <p className="text-sm font-[500] text-slate-600 w-[15%] px-[15px] ">David Iroegbu</p>
 
-                                            <span className="w-[10%] flex items-center justify-start gap-[15px] ">
-                                                <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-teal-700 hover:bg-teal-800 text-white " onClick={()=> handle_view(data)}>view</button>
+                                                <span className="w-[10%] flex items-center justify-start gap-[15px] px-[15px] ">
+                                                    <button className="h-[27.5px] rounded-[2px] text-sm px-5 bg-teal-700 hover:bg-teal-800 text-white " onClick={()=> handle_view(data)}>view</button>
+                                                </span>
+                                                
                                             </span>
-                                            
-                                        </span>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">

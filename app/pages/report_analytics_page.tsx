@@ -107,39 +107,39 @@ const Report_analytics_page = () => {
     }
 
     return (
-        <div className='w-full flex items-start justify-center px-[75px] py-10 '  >
+        <div className='w-full flex items-start justify-center  px-[20px] md:px-[55px] lg:px-[75px] py-10 relative '  >
             <div className="w-full flex flex-col justify-start items-center gap-10">
 
                 {/* section showing metrics */}
-                <div className="w-full flex flex-wrap items-center justify-between gap-10">
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-blue-600">$125,000</p>
-                        <p className="text-md text-center text-blue-600">Total Loans</p>
+                <div className="w-full flex flex-wrap items-center justify-between gap-[20px] sm:gap-10">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">$125,000</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600">Total Loans</p>
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-                        <p className="text-3xl font-[600] text-teal-700">$8,450</p>
-                        <p className="text-md text-center text-teal-700">Total Revenue</p>
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+                        <p className="text-xl sm:text-2xl font-[600] text-teal-700">$8,450</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-teal-700">Total Revenue</p>
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
 
-                        <p className="text-3xl font-[600] text-red-600">5%</p>
-                        <p className="text-md text-center text-red-600 ">Default Rate</p>
-
-                    </span>
-
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
-
-                        <p className="text-3xl font-[600] text-amber-600">980</p>
-                        <p className="text-md text-center text-amber-600 mx-auto w-[80%] ">Active Loans</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-red-600">5%</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-red-600 ">Default Rate</p>
 
                     </span>
 
-                    <span className="w-[225px] h-[175px] rounded-[3px] shadow-md border border-slate-200 px-[15px] flex flex-col items-center justify-center gap-5 ">
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
 
-                        <p className="text-3xl font-[600] text-blue-600">120</p>
-                        <p className="text-md text-center text-blue-600  mx-auto w-[60%] ">New Customers</p>
+                        <p className="text-xl sm:text-2xl font-[600] text-amber-600">980</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-amber-600 mx-auto w-[80%] ">Active Loans</p>
+
+                    </span>
+
+                    <span className="w-[45%] md:w-[250px] lg:w-[220px] h-[175px] rounded-[5px]  p-[25px] shadow-md flex flex-col items-center justify-center gap-5 border border-slate-200 ">
+
+                        <p className="text-xl sm:text-2xl font-[600] text-blue-600">120</p>
+                        <p className="text-md sm:text-lg font-[500] text-center text-blue-600  mx-auto w-[60%] ">New Customers</p>
 
                     </span>
                 </div>
@@ -152,7 +152,7 @@ const Report_analytics_page = () => {
                     
                     <span className="w-full flex items-center justify-end p-[15px] pb-0 ">
                         <span className="w-[250px] h-[45px] mr-10 ">
-                            <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Select Repayment Status' id='repayment_status' onSelect={handle_select} />
+                            <Dropdown options={['Pending', 'Overdue', 'Paid']} placeholder='Status' id='repayment_status' onSelect={handle_select} />
                         </span>
 
                         <span className="w-[200px] ">
@@ -161,38 +161,40 @@ const Report_analytics_page = () => {
 
                     </span>
 
-                    <div className="w-full p-[15px] flex flex-col items-start justify-start mx-auto ">
-                        <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
-                            <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Loan Id</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Customer Name</p>
-                            <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Loan Amount</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Interest Rate</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Repayment Status</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Default Status</p>
-                            <p className="text-sm font-[600] w-[15%] px-[15px] ">Revenue Collected</p>
-                        </span>
+                    <div className="w-full overflow-y-auto">
+                        <div className="min-w-[1300px] p-[15px] flex flex-col items-start justify-start mx-auto ">
+                            <span className="w-full h-[50px] flex items-center justify-between bg-blue-600 text-white rounded-[3px]">
+                                <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Loan Id</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Customer Name</p>
+                                <p className="text-sm font-[600] w-[12.5%] px-[15px] ">Loan Amount</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Interest Rate</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Repayment Status</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Default Status</p>
+                                <p className="text-sm font-[600] w-[15%] px-[15px] ">Revenue Collected</p>
+                            </span>
 
-                        <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
-                            <div className="w-full h-full flex flex-col justify-start">
-                                {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
-                                    return(
-                                        <span key={ind} className="table-body-row-1  ">
-                                            <span className="w-[12.5%] px-[15px] ">
-                                                <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >BL1000207{ind}</p>
+                            <div className="w-full h-[500px] flex flex-col items-start justify-start overflow-y-auto">
+                                <div className="w-full h-full flex flex-col justify-start">
+                                    {[1,2,4,5,1,1,1,1,1,1,].map((data, ind)=>{
+                                        return(
+                                            <span key={ind} className="table-body-row-1  ">
+                                                <span className="w-[12.5%] px-[15px] ">
+                                                    <p className="text-sm font-[500] text-blue-600 hover:cursor-pointer" onClick={()=> handle_view(data)} >BL1000207{ind}</p>
+                                                </span>
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">Ibrahim Babangida</p>
+                                                <p className="text-sm font-[500] w-[12.5%] px-[15px] text-slate-600">$10,000</p>
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">5%</p>
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">Pending</p>   {/* pending paid overdue */}
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">No</p> 
+                                                <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">$0</p> 
+                                                
                                             </span>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">Ibrahim Babangida</p>
-                                            <p className="text-sm font-[500] w-[12.5%] px-[15px] text-slate-600">$10,000</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">5%</p>
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">Pending</p>   {/* pending paid overdue */}
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">No</p> 
-                                            <p className="text-sm font-[500] w-[15%] px-[15px] text-slate-600">$0</p> 
-                                            
-                                        </span>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <span className="w-full h-[50px] flex flex-row items-center justify-between bg-white rounded-b-[3px] border-t border-gray-300 px-[15px] ">
