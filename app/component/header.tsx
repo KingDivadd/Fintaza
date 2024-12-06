@@ -29,7 +29,7 @@ const Header = () => {
 
     return (
         <div className="w-full flex flex-col items-center justify-start bg-blue-600 ">
-            <nav className="w-[95%] md:w-[92.5%] lg:w-[90%] mx-auto h-[100px] md:h-[120px] flex items-center justify-between ">
+            <nav className="w-[90%] lg:w-[90%] mx-auto h-[100px] md:h-[120px] flex items-center justify-between ">
                 {/* left nav */}
                 <div className=" flex h-full items-center justify-start gap-5">
                     <span className="flex items-center mr-5 cursor-pointer" onClick={()=> setHeader_nav('home') }>
@@ -51,7 +51,7 @@ const Header = () => {
                 </div>
             </nav>
 
-            <div className="lg:w-[70%] md:w-[80%] w-[95%] mx-auto flex flex-col items-start justify-start gap-5 mb-5 sm:mb-10 h-auto  ">
+            <div className="lg:w-[70%] md:w-[80%] w-[90%] mx-auto flex flex-col items-start justify-start gap-5 mb-5 sm:mb-10 h-auto  ">
                 <p className="text-[30px] md:text-[45px] xl:text-[65px] font-bold text-white">FintazaPdl</p>
                 <p className="text-md xl:text-lg md:w-[650px] text-start font-[400] text-white h-auto ">A comprehensive platform for managing loans, streamlining application processes, automating credit evaluation, enabling seamless payments, and enhancing user experience with secure customer and admin portals.</p>
 

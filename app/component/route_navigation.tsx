@@ -64,7 +64,7 @@ const Route_navigation = () => {
                         <p className="max-sm:hidden text-md">Notifications</p>
                     </button>
 
-                    {trigger_notification && <div className="absolute z-20 top-[50px] w-[400px] h-[360px] right-0 rounded-[5px] shadow-md border border-slate-200 bg-white flex items-center justify-center ">
+                    {trigger_notification && <div className="absolute z-20 top-[50px] right-0 w-[335px] sm:w-[450px] h-[360px] right-0 rounded-[5px] shadow-md border border-slate-200 bg-white flex items-center justify-center ">
                         no new notification
                     </div>}
 
